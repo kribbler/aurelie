@@ -1,0 +1,304 @@
+2012-07-09 15:56:45 Error: [MissingControllerException] Controller class UsersController could not be found.
+#0 C:\wamp\www\cakephp2.1.3\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2012-10-02 21:22:39 Error: [MissingControllerException] Controller class JewelryScrapController could not be found.
+#0 C:\wamp\www\cakephp2.1.3\app\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-29 07:00:12 Error: [MissingTableException] Table links for model Link was not found in datasource default.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\Model\Model.php(3443): Model->setSource('links')
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Model\Model.php(2698): Model->getDataSource()
+#2 C:\wamp\www\cakephp2.1.3\aurelie_scrap\Controller\LinksController.php(7): Model->find('all')
+#3 [internal function]: LinksController->index()
+#4 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(485): ReflectionMethod->invokeArgs(Object(LinksController), Array)
+#5 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#6 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(LinksController), Object(CakeRequest), Object(CakeResponse))
+#7 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2014-09-29 07:00:44 Error: [MissingControllerException] Controller class LinksController could not be found.
+#0 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-29 07:00:49 Error: [MissingControllerException] Controller class UrlsController could not be found.
+#0 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-29 07:01:56 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Urls\index.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(UrlsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 08:33:03 Error: [MissingControllerException] Controller class ImgController could not be found.
+#0 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-29 08:38:23 Error: [MissingControllerException] Controller class ProductsController could not be found.
+#0 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-29 08:39:02 Error: [MissingActionException] Action ProductsController::scrap() could not be found.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-09-29 08:40:27 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:17:34 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:18:21 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:18:33 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:18:33 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:18:36 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:18:42 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:19:48 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:19:48 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:20:22 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:20:23 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:27:25 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:27:25 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:28:06 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:28:08 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:28:20 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:28:21 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:28:34 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:30:34 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:31:12 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:31:12 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:31:25 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:35:08 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:35:42 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:39:07 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:39:17 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:39:26 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:39:38 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:39:44 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\scrap.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:40:27 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\index.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:48:18 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-29 09:48:41 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-29 09:48:46 Error: [MissingControllerException] Controller class CssController could not be found.
+#0 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-09-29 09:51:51 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\edit.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 09:52:20 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\edit.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 10:02:43 Error: [MissingActionException] Action ProductsController::export_to_csv() could not be found.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-09-29 10:08:38 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\export_to_csv.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 10:08:38 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\export_to_csv.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-29 10:09:15 Error: [MissingViewException] View file "C:\wamp\www\cakephp2.1.3\aurelie_scrap\View\Products\export_to_csv.ctp" is missing.
+#0 C:\wamp\www\cakephp2.1.3\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\wamp\www\cakephp2.1.3\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(110): Controller->render()
+#3 C:\wamp\www\cakephp2.1.3\lib\Cake\Routing\Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\wamp\www\cakephp2.1.3\aurelie_scrap\webroot\index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-10-13 09:58:25 Error: [MissingActionException] Action ProductsController::RG-JB6653() could not be found.
+#0 /var/www/vhosts/tv0.no/httpdocs/aurelie.no/iscrap/lib/Cake/Routing/Dispatcher.php(103): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/vhosts/tv0.no/httpdocs/aurelie.no/iscrap/lib/Cake/Routing/Dispatcher.php(85): Dispatcher->_invoke(Object(ProductsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/vhosts/tv0.no/httpdocs/aurelie.no/iscrap/aurelie_scrap/webroot/index.php(92): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}

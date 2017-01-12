@@ -1,0 +1,147 @@
+Scrapping category http://www.safira.se/produkt/armband/
+Scrapping subcategory http://www.safira.se/produkt/armband/silver/
+Scrapping subcategory http://www.safira.se/produkt/armband/lader/
+Scrapping subcategory http://www.safira.se/produkt/armband/stalarmband/
+Scrapping category http://www.safira.se/produkt/halsband/
+Scrapping subcategory http://www.safira.se/produkt/halsband/guldhalsband/
+Scrapping subcategory http://www.safira.se/produkt/halsband/silverhalsband/
+Scrapping subcategory http://www.safira.se/produkt/halsband/korshalsband/
+Scrapping category http://www.safira.se/produkt/orhangen/
+Scrapping subcategory http://www.safira.se/produkt/orhangen/guldorhangen/
+Scrapping subcategory http://www.safira.se/produkt/orhangen/silverorhangen/
+Scrapping subcategory http://www.safira.se/produkt/orhangen/parlor/
+Scrapping subcategory http://www.safira.se/produkt/orhangen/cubiczirkonia/
+Scrapping subcategory http://www.safira.se/produkt/orhangen/kristaller/
+Scrapping category http://www.safira.se/produkt/hangen/
+Scrapping subcategory http://www.safira.se/produkt/hangen/guldhangen/
+Scrapping subcategory http://www.safira.se/produkt/hangen/silverhangen/
+Scrapping subcategory http://www.safira.se/produkt/hangen/hjartan/
+Scrapping subcategory http://www.safira.se/produkt/hangen/stjarntecken/
+Scrapping subcategory http://www.safira.se/produkt/hangen/cubiczirkonia/
+Scrapping category http://www.safira.se/produkt/ringar/
+Scrapping subcategory http://www.safira.se/produkt/ringar/stalringar/
+Scrapping subcategory http://www.safira.se/produkt/ringar/silver/
+Scrapping subcategory http://www.safira.se/produkt/ringar/guldringar/
+Scrapping subcategory http://www.safira.se/produkt/ringar/forlovningsringar/
+Scrapping category Array
+Scrapping category Array
+Scrapping category Array
+Scrapping category Array
+Scrapping category Array
+Scrapping category http://www.safira.se/produkt/armband/
+Scrapping subcategory http://www.safira.se/produkt/armband/silver/
+Reading page http://www.safira.se/produkt/barnsmycken/armband/dambarn-armband-i-silver-med-valfri-gravyr
+Adding http://www.safira.se/produkt/barnsmycken/armband/dambarn-armband-i-silver-med-valfri-gravyr
+Adding http://www.safira.se/produkt/barnsmycken/armband/dambarn-armband-i-silver-med-valfri-gravyr
+Adding http://www.safira.se/produkt/barnsmycken/armband/dambarn-armband-i-silver-med-valfri-gravyr
+Reading page http://www.safira.se/produkt/armband/berlocklank-19-cm-925-sterling-silver
+Adding http://www.safira.se/produkt/armband/berlocklank-19-cm-925-sterling-silver
+Reading page http://www.safira.se/produkt/barnsmycken/armband/barn-armband-i-silver-med-valfri-gravyr
+Adding http://www.safira.se/produkt/barnsmycken/armband/barn-armband-i-silver-med-valfri-gravyr
+Reading page http://www.safira.se/produkt/armband/silver/armband-i-925-sterling-silver
+Adding http://www.safira.se/produkt/armband/silver/armband-i-925-sterling-silver
+Reading page http://www.safira.se/produkt/barnsmycken/armband/armband-for-barn-med-rosa-fjarilar-i-925-sterling-silver
+Adding http://www.safira.se/produkt/barnsmycken/armband/armband-for-barn-med-rosa-fjarilar-i-925-sterling-silver
+Reading page http://www.safira.se/produkt/armband/laderarmband-med-gravyrhange-10-mm-925-sterling-silver
+Adding http://www.safira.se/produkt/armband/laderarmband-med-gravyrhange-10-mm-925-sterling-silver
+Adding http://www.safira.se/produkt/armband/laderarmband-med-gravyrhange-10-mm-925-sterling-silver
+Adding http://www.safira.se/produkt/armband/laderarmband-med-gravyrhange-10-mm-925-sterling-silver
+Reading page http://www.safira.se/produkt/barnsmycken/armband/barn-armband-i-silver-med-gravyr-15-cm
+Adding http://www.safira.se/produkt/barnsmycken/armband/barn-armband-i-silver-med-gravyr-15-cm
+Reading page http://www.safira.se/produkt/barnsmycken/armband/armband-for-barn-med-rosa-jordgubbar-i-925-sterling-silver
+Adding http://www.safira.se/produkt/barnsmycken/armband/armband-for-barn-med-rosa-jordgubbar-i-925-sterling-silver
+Reading page http://www.safira.se/produkt/armband/silver/armband-i-925-sterling-silver-med-kristaller
+Adding http://www.safira.se/produkt/armband/silver/armband-i-925-sterling-silver-med-kristaller
+Reading page http://www.safira.se/produkt/armband/silver/dam-armband-stretch-med-ljusbla-kristall-16-cm-kulkedja-i-silver
+Adding http://www.safira.se/produkt/armband/silver/dam-armband-stretch-med-ljusbla-kristall-16-cm-kulkedja-i-silver
+Reading page http://www.safira.se/produkt/armband/silver/dam-armband-stretch-med-kors-16-cm-kulkedja-i-silver
+Adding http://www.safira.se/produkt/armband/silver/dam-armband-stretch-med-kors-16-cm-kulkedja-i-silver
+Reading page http://www.safira.se/produkt/silversmycken/design-armband-21-cm-i-925-sterling-silver
+Adding http://www.safira.se/produkt/silversmycken/design-armband-21-cm-i-925-sterling-silver
+Reading page http://www.safira.se/produkt/armband/silver/dam-armband-stretch-16-cm-kulkedja-i-silver
+Adding http://www.safira.se/produkt/armband/silver/dam-armband-stretch-16-cm-kulkedja-i-silver
+Reading page http://www.safira.se/produkt/barnsmycken/armband/barn-armband-i-silver-med-valfri-gravyr-16-cm
+Adding http://www.safira.se/produkt/barnsmycken/armband/barn-armband-i-silver-med-valfri-gravyr-16-cm
+Adding http://www.safira.se/produkt/barnsmycken/armband/barn-armband-i-silver-med-valfri-gravyr-16-cm
+Reading page http://www.safira.se/produkt/armband/silver/dam-armband-stretch-med-vit-kristall-16-cm-kulkedja-i-silver
+Adding http://www.safira.se/produkt/armband/silver/dam-armband-stretch-med-vit-kristall-16-cm-kulkedja-i-silver
+Reading page http://www.safira.se/produkt/silversmycken/design-armband-20-cm-i-925-sterling-silver
+Adding http://www.safira.se/produkt/silversmycken/design-armband-20-cm-i-925-sterling-silver
+Reading page http://www.safira.se/produkt/armband/lader/akta-laderarmband-20-cm-stav-25-mm-med-gravyr-925-sterling-silve
+Adding http://www.safira.se/produkt/armband/lader/akta-laderarmband-20-cm-stav-25-mm-med-gravyr-925-sterling-silve
+Reading page http://www.safira.se/produkt/student/dam-armband-stretch-med-ljusbla-kristall-16-cm-kulkedja-i-silver
+Adding http://www.safira.se/produkt/student/dam-armband-stretch-med-ljusbla-kristall-16-cm-kulkedja-i-silver
+Reading page http://www.safira.se/produkt/silversmycken/design-armband-19-cm-i-925-sterling-silver
+Adding http://www.safira.se/produkt/silversmycken/design-armband-19-cm-i-925-sterling-silver
+Reading page http://www.safira.se/produkt/silversmycken/design-armband-18-cm-i-925-sterling-silver
+Adding http://www.safira.se/produkt/silversmycken/design-armband-18-cm-i-925-sterling-silver
+Reading page http://www.safira.se/produkt/varumarken/sahara-silver/sahara-silver-juliette-armband-20-0-cm
+Adding http://www.safira.se/produkt/varumarken/sahara-silver/sahara-silver-juliette-armband-20-0-cm
+Reading page http://www.safira.se/produkt/varumarken/sahara-silver/sahara-silver-happiness-armband-20-0-cm
+Adding http://www.safira.se/produkt/varumarken/sahara-silver/sahara-silver-happiness-armband-20-0-cm
+Reading page http://www.safira.se/produkt/varumarken/sahara-silver/sahara-silver-happiness-armband-18-5-cm
+Adding http://www.safira.se/produkt/varumarken/sahara-silver/sahara-silver-happiness-armband-18-5-cm
+Reading page http://www.safira.se/produkt/varumarken/sahara-silver/sahara-silver-beata-armband-20-0-cm
+Adding http://www.safira.se/produkt/varumarken/sahara-silver/sahara-silver-beata-armband-20-0-cm
+Reading page http://www.safira.se/produkt/varumarken/sahara-silver/sahara-silver-beata-armband-18-5-cm
+Adding http://www.safira.se/produkt/varumarken/sahara-silver/sahara-silver-beata-armband-18-5-cm
+Reading page http://www.safira.se/produkt/armband/silver/dam-armband-stretch-med-rosa-kristall-16-cm-kulkedja-i-silver
+Adding http://www.safira.se/produkt/armband/silver/dam-armband-stretch-med-rosa-kristall-16-cm-kulkedja-i-silver
+Reading page http://www.safira.se/produkt/silversmycken/design-armband-i-925-sterling-silver
+Adding http://www.safira.se/produkt/silversmycken/design-armband-i-925-sterling-silver
+DONE scrapping http://www.safira.se/produkt/armband/silver/
+Scrapping subcategory http://www.safira.se/produkt/armband/lader/
+Reading page http://www.safira.se/produkt/armband/armband-i-lader-med-stallas-22-cm-med-gravyr
+Adding http://www.safira.se/produkt/armband/armband-i-lader-med-stallas-22-cm-med-gravyr
+Reading page http://www.safira.se/produkt/armband/armband-20-cm-lader-las-i-kirurgiskt-stal
+Adding http://www.safira.se/produkt/armband/armband-20-cm-lader-las-i-kirurgiskt-stal
+Reading page http://www.safira.se/produkt/armband/armband-i-lader-med-stallas-19-cm-med-gravyr
+Adding http://www.safira.se/produkt/armband/armband-i-lader-med-stallas-19-cm-med-gravyr
+Reading page http://www.safira.se/produkt/varumarken/sahara-silver/sahara-silver-nothing-else-matters-armband-18-5-cm
+Adding http://www.safira.se/produkt/varumarken/sahara-silver/sahara-silver-nothing-else-matters-armband-18-5-cm
+Reading page http://www.safira.se/produkt/varumarken/sahara-silver/sahara-silver-don-t-stop-believin-armband-21-0-cm
+Adding http://www.safira.se/produkt/varumarken/sahara-silver/sahara-silver-don-t-stop-believin-armband-21-0-cm
+Reading page http://www.safira.se/produkt/varumarken/sahara-silver/sahara-silver-nothing-else-matters-armband-21-0-cm
+Adding http://www.safira.se/produkt/varumarken/sahara-silver/sahara-silver-nothing-else-matters-armband-21-0-cm
+Reading page http://www.safira.se/produkt/varumarken/sahara-silver/sahara-silver-don-t-stop-believin-armband-18-5-cm
+Adding http://www.safira.se/produkt/varumarken/sahara-silver/sahara-silver-don-t-stop-believin-armband-18-5-cm
+Reading page http://www.safira.se/produkt/varumarken/sahara-silver/sahara-silver-always-and-forever-armband-18-5-cm
+Adding http://www.safira.se/produkt/varumarken/sahara-silver/sahara-silver-always-and-forever-armband-18-5-cm
+DONE scrapping http://www.safira.se/produkt/armband/lader/
+Scrapping subcategory http://www.safira.se/produkt/armband/stalarmband/
+Reading page http://www.safira.se/produkt/armband/stalarmband/armband-i-stal-med-valfri-gravyr-21-cm-guldplatterad
+Adding http://www.safira.se/produkt/armband/stalarmband/armband-i-stal-med-valfri-gravyr-21-cm-guldplatterad
+Reading page http://www.safira.se/produkt/armband/stalarmband/armband-med-valfri-gravyr-figarolank-i-stal
+Adding http://www.safira.se/produkt/armband/stalarmband/armband-med-valfri-gravyr-figarolank-i-stal
+Reading page http://www.safira.se/produkt/barnsmycken/armband/dam-barn-armband-i-stal-med-valfri-gravyr
+Adding http://www.safira.se/produkt/barnsmycken/armband/dam-barn-armband-i-stal-med-valfri-gravyr
+Reading page http://www.safira.se/produkt/armband/stalarmband/armband-med-valfri-gravyr-roseguldplatterat-stal-18-5-cm
+Adding http://www.safira.se/produkt/armband/stalarmband/armband-med-valfri-gravyr-roseguldplatterat-stal-18-5-cm
+DONE scrapping http://www.safira.se/produkt/armband/stalarmband/
+Scrapping category http://www.safira.se/produkt/halsband/
+Scrapping subcategory http://www.safira.se/produkt/halsband/guldhalsband/
+Reading page http://www.safira.se/produkt/hangen/guldhangen/gravyrhangen/hange-av-hjarta-med-gravyr-18k-guld
+Adding http://www.safira.se/produkt/hangen/guldhangen/gravyrhangen/hange-av-hjarta-med-gravyr-18k-guld
+Reading page http://www.safira.se/produkt/hangen/guldhangen/gravyrhangen/id-bricka-med-valfri-gravyr-18k-guld-16x22-mm
+Adding http://www.safira.se/produkt/hangen/guldhangen/gravyrhangen/id-bricka-med-valfri-gravyr-18k-guld-16x22-mm
+Reading page http://www.safira.se/produkt/hangen/guldhangen/gravyrhangen/id-bricka-med-valfri-gravyr-18k-guld-13x19-mm
+Adding http://www.safira.se/produkt/hangen/guldhangen/gravyrhangen/id-bricka-med-valfri-gravyr-18k-guld-13x19-mm
+Reading page http://www.safira.se/produkt/hangen/guldhangen/gravyrhangen/id-bricka-med-valfri-gravyr-18k-guld-17x23-mm
+Adding http://www.safira.se/produkt/hangen/guldhangen/gravyrhangen/id-bricka-med-valfri-gravyr-18k-guld-17x23-mm
+Reading page http://www.safira.se/produkt/hangen/guldhangen/gravyrhangen/id-bricka-med-valfri-gravyr-18k-guld-19x27-mm
+Adding http://www.safira.se/produkt/hangen/guldhangen/gravyrhangen/id-bricka-med-valfri-gravyr-18k-guld-19x27-mm
+Reading page http://www.safira.se/produkt/hangen/guldhangen/gravyrhangen/id-bricka-med-valfri-gravyr-18k-guld-17x23-mm-facetterad
+Adding http://www.safira.se/produkt/hangen/guldhangen/gravyrhangen/id-bricka-med-valfri-gravyr-18k-guld-17x23-mm-facetterad
+Reading page http://www.safira.se/produkt/hangen/guldhangen/gravyrhangen/id-bricka-med-valfri-gravyr-18k-guld-19x27-mm-facetterad
+Adding http://www.safira.se/produkt/hangen/guldhangen/gravyrhangen/id-bricka-med-valfri-gravyr-18k-guld-19x27-mm-facetterad
+Reading page http://www.safira.se/produkt/hangen/guldhangen/manadsstenar/hange-manadssten-mars-18k-guld
+Scrapping category Array
+Scrapping category Array
+Scrapping category Array
+Scrapping category Array
+Scrapping category Array
+Scrapping category Array
+Scrapping category Array
+Scrapping category Array
+Scrapping category Array
+Scrapping category Array

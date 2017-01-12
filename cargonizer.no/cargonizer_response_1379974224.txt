@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<consignments>
+ <consignment transport_agreement="1047" estimate="true">
+  <transfer_date>2013-09-24T00:10:23</transfer_date>
+  <values>
+   <value name="ordre_id" value="123456" />
+  </values>
+  <product>mypack</product>
+  <parts>
+   <consignee>
+    <name>Kjetil Hagen</name>
+    <address1>Liebakken 10</address1>
+    <address2>Norge</address2>
+    <country>NO</country>
+    <postcode>3048</postcode>
+    <city>Drammen</city>
+    <phone>66006600</phone>
+   </consignee>
+   <service_partner>
+    <number>3042033</number>
+    <customer_number>DRA</customer_number>
+    <name>KIWI 570 GULSKOGEN</name>
+    <address1>GULDLISTEN 35</address1>
+    <country>NO</country>
+    <postcode>3048</postcode>
+    <city>DRAMMEN</city>
+   </service_partner>
+  </parts>
+  <items>
+   <item amount="1" weight="1.3" length="5" width="5" height="5" description="Armbånd i sølv med ferskvannsperler" type="PK" />
+  </items>
+  <services>
+   <service id="tg_etterkrav">
+    <amount>4571</amount>
+    <currency>NOK</currency>
+    <kid>1000076353545222</kid>
+   </service>
+  </services>
+ </consignment>
+</consignments>
+
+
+The response:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<hash>
+  <error>FreightCalculator::EstimationNotPossible: No username and password</error>
+</hash>

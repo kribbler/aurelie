@@ -1,0 +1,224 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Aurelie Shipping Cargonizer v1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-01-05 04:55:58+0000\n"
+"Last-Translator: daniel <daniel.oraca@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: Norwegian (Bokmål)\n"
+"X-Poedit-Country: NORWAY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: aurelie_shipping_cargonizer.php:24
+#: aurelie_shipping_cargonizer.php:131
+#@ woocommerce
+msgid "Aurelie Shipping"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:26
+#@ woocommerce
+msgid "Weight based shipping"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:27
+#@ woocommerce
+msgid "Define shipping by weight and country"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:122
+#@ woocommerce
+msgid "Enable/Disable"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:124
+#@ woocommerce
+msgid "Enable this shipping method"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:128
+#@ woocommerce
+msgid "Method Title"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:130
+#@ woocommerce
+msgid "This controls the title which the user sees during checkout."
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:412
+#@ aurelie_shipping
+msgid "Ordre nr."
+msgstr "Ordre"
+
+#: aurelie_shipping_cargonizer.php:434
+#@ woocommerce
+msgid "Aurelie shipping"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:435
+#@ woocommerce
+msgid "The description"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:960
+#@ woocommerce
+msgid "Sorry, your session has expired."
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:960
+#@ woocommerce
+msgid "Return to homepage &rarr;"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:819
+#@ aurelie_shipping
+msgid "Package Number"
+msgstr "Sendingsnummer"
+
+#: aurelie_shipping_cargonizer.php:188
+#@ aurelie_shipping
+msgid "Fri frakt"
+msgstr "Fri frakt (Post i butikk - Postkontor)"
+
+#: aurelie_shipping_cargonizer.php:194
+#@ aurelie_shipping
+msgid "Tollpost Globe (MyPack)"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:195
+#@ aurelie_shipping
+msgid "MyPack"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:201
+#@ aurelie_shipping
+msgid "Bring (På Døren)"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:202
+#@ aurelie_shipping
+msgid "På Døren"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:208
+#@ aurelie_shipping
+msgid "Bring (Minipakke)"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:209
+#@ aurelie_shipping
+msgid "Minipakke"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:216
+#@ aurelie_shipping
+msgid "Use Bring Notification Service (eVarsling)"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:218
+#@ aurelie_shipping
+msgid "When checked, it allows buyer to enter his mobile phone number or email address to receive notifications"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:134
+#@ aurelie_shipping
+msgid "Cargonizer API Key (Production)"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:139
+#@ aurelie_shipping
+msgid "Cargonizer Sender ID (Production)"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:144
+#@ aurelie_shipping
+msgid "Cargonizer API Key (Sandbox)"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:149
+#@ aurelie_shipping
+msgid "Cargonizer Sender ID (Sandbox)"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:154
+#@ aurelie_shipping
+msgid "Sandbox or Production Environment"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:156
+#@ aurelie_shipping
+msgid "This option is important as it will affect how consignments are send to Cargonizer"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:187
+#@ aurelie_shipping
+msgid "Free Shipping"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:221
+#: aurelie_shipping_cargonizer.php:222
+#@ aurelie_shipping
+msgid "Small Packages"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:224
+#@ aurelie_shipping
+msgid "This shipping method is using Bring Småpakker to calculate shipping cost based on information provided bellow"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:227
+#: aurelie_shipping_cargonizer.php:228
+#@ aurelie_shipping
+msgid "Price per package"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:233
+#: aurelie_shipping_cargonizer.php:234
+#@ aurelie_shipping
+msgid "Price per kilogram"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:239
+#: aurelie_shipping_cargonizer.php:240
+#@ aurelie_shipping
+msgid "Pickup Address"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:242
+#@ default
+msgid "This is the addess that will be used on Google Maps"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:245
+#: aurelie_shipping_cargonizer.php:246
+#@ aurelie_shipping
+msgid "Pickup Postcode"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:248
+#@ default
+msgid "This is the postcode that will be used on Google Maps"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:251
+#: aurelie_shipping_cargonizer.php:252
+#@ aurelie_shipping
+msgid "Pickup City"
+msgstr ""
+
+#: aurelie_shipping_cargonizer.php:254
+#@ default
+msgid "This is the city that will be used on Google Maps"
+msgstr ""
+

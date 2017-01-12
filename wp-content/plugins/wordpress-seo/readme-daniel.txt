@@ -1,0 +1,1 @@
+1. the file plugins/wordpress-seo/frontend/class-frontend.php has a tweak by me on function get_title_from_options

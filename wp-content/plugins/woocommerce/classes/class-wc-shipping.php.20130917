@@ -1,0 +1,711 @@
+<?php
+/**
+ * WooCommerce Shipping Class
+ *
+ * Handles shipping and loads shipping methods via hooks.
+ *
+ * @class 		WC_Shipping
+ * @version		1.6.4
+ * @package		WooCommerce/Classes/Shipping
+ * @category	Class
+ * @author 		WooThemes
+ */
+
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+
+class WC_Shipping {
+
+	/** @var bool True if shipping is enabled. */
+	var $enabled					= false;
+
+	/** @var array Stores methods loaded into woocommerce. */
+	var $shipping_methods 			= array();
+
+	/** @var float Stores the cost of shipping */
+	var $shipping_total 			= 0;
+
+	/**  @var array Stores an array of shipping taxes. */
+	var $shipping_taxes				= array();
+
+	/**  @var string Stores the label for the chosen method. */
+	var $shipping_label				= null;
+
+	/** @var array Stores the shipping classes. */
+	var $shipping_classes			= array();
+
+	/** @var array Stores packages to ship and to get quotes for. */
+	var $packages					= array();
+
+	/**
+	 * __construct function.
+	 *
+	 * @access public
+	 * @return void
+	 */
+	public function __construct() {
+		$this->init();
+	}
+
+    /**
+     * init function.
+     *
+     * @access public
+     */
+    function init() {
+		do_action( 'woocommerce_shipping_init' );
+
+		$this->enabled = ( get_option('woocommerce_calc_shipping') == 'no' ) ? false : true;
+	}
+
+	/**
+	 * load_shipping_methods function.
+	 *
+	 * Loads all shipping methods which are hooked in. If a $package is passed some methods may add themselves conditionally.
+	 *
+	 * Methods are sorted into their user-defined order after being loaded.
+	 *
+	 * @access public
+	 * @return array
+	 */
+	function load_shipping_methods( $package = false ) {
+
+		$this->unregister_shipping_methods();
+
+		// Methods can register themselves through this hook
+		do_action( 'woocommerce_load_shipping_methods', $package );
+
+		// Register methods through a filter
+		$shipping_methods_to_load = apply_filters( 'woocommerce_shipping_methods', array() );
+
+		foreach ( $shipping_methods_to_load as $method )
+			$this->register_shipping_method( $method );
+
+		$this->sort_shipping_methods();
+
+		return $this->shipping_methods;
+	}
+
+	/**
+	 * Register a shipping method for use in calculations.
+	 *
+	 * @access public
+	 * @return void
+	 */
+	function register_shipping_method( $method ) {
+
+		if ( ! is_object( $method ) )
+			$method = new $method();
+
+		$id = empty( $method->instance_id ) ? $method->id : $method->instance_id;
+
+		$this->shipping_methods[ $id ] = $method;
+	}
+
+	/**
+	 * unregister_shipping_methods function.
+	 *
+	 * @access public
+	 * @return void
+	 */
+	function unregister_shipping_methods() {
+		unset( $this->shipping_methods );
+	}
+
+	/**
+	 * sort_shipping_methods function.
+	 *
+	 * Sorts shipping methods into the user defined order.
+	 *
+	 * @access public
+	 * @return array
+	 */
+	function sort_shipping_methods() {
+
+		$sorted_shipping_methods = array();
+
+		// Get order option
+		$ordering 	= (array) get_option('woocommerce_shipping_method_order');
+		$order_end 	= 999;
+
+		// Load shipping methods in order
+		foreach ( $this->shipping_methods as $method ) {
+
+			if ( isset( $ordering[ $method->id ] ) && is_numeric( $ordering[ $method->id ] ) ) {
+				// Add in position
+				$sorted_shipping_methods[ $ordering[ $method->id ] ][] = $method;
+			} else {
+				// Add to end of the array
+				$sorted_shipping_methods[ $order_end ][] = $method;
+			}
+		}
+
+		ksort( $sorted_shipping_methods );
+
+		$this->shipping_methods = array();
+
+		foreach ( $sorted_shipping_methods as $methods )
+			foreach ( $methods as $method ) {
+				$id = empty( $method->instance_id ) ? $method->id : $method->instance_id;
+				$this->shipping_methods[ $id ] = $method;
+			}
+
+		return $this->shipping_methods;
+	}
+
+	/**
+	 * get_shipping_methods function.
+	 *
+	 * Returns all registered shipping methods for usage.
+	 *
+	 * @access public
+	 * @param mixed $package
+	 * @return void
+	 */
+	function get_shipping_methods() {
+		return $this->shipping_methods;
+	}
+
+	/**
+	 * get_shipping_classes function.
+	 *
+	 * Load shipping classes taxonomy terms.
+	 *
+	 * @access public
+	 * @return array
+	 */
+	function get_shipping_classes() {
+		if ( empty( $this->shipping_classes ) )
+			$this->shipping_classes = ( $classes = get_terms( 'product_shipping_class', array( 'hide_empty' => '0' ) ) ) ? $classes : array();
+
+		return $this->shipping_classes;
+	}
+
+	/**
+	 * calculate_shipping function.
+	 *
+	 * Calculate shipping for (multiple) packages of cart items.
+	 *
+	 * @access public
+	 * @param array $packages multi-dimensional array of cart items to calc shipping for
+	 */
+	function calculate_shipping( $packages = array() ) {
+		global $woocommerce;
+
+		if ( ! $this->enabled || empty( $packages ) )
+			return;
+
+		$this->shipping_total 	= 0;
+		$this->shipping_taxes 	= array();
+		$this->shipping_label 	= null;
+		$this->packages 		= array();
+		$_cheapest_cost = $_cheapest_method = $chosen_method = '';
+
+		// Calculate costs for passed packages
+		$package_keys 		= array_keys( $packages );
+		$package_keys_size 	= sizeof( $package_keys );
+
+		for ( $i = 0; $i < $package_keys_size; $i ++ )
+			$this->packages[ $package_keys[ $i ] ] = $this->calculate_shipping_for_package( $packages[ $package_keys[ $i ] ] );
+
+		// Get available methods (in this case methods for all packages)
+		$_available_methods = $this->get_available_shipping_methods();
+
+		// Get chosen method
+		if ( ! empty( $woocommerce->session->chosen_shipping_method ) )
+			$chosen_method = $woocommerce->session->chosen_shipping_method;
+
+		$woocommerce->session->available_methods_count = sizeof( $_available_methods );
+
+		if ( sizeof( $_available_methods ) > 0 ) {
+
+			// If not set, set a default
+			if ( empty( $chosen_method ) || ! isset( $_available_methods[ $chosen_method ] ) ) {
+
+				$chosen_method = apply_filters( 'woocommerce_shipping_chosen_method', get_option('woocommerce_default_shipping_method'), $_available_methods );
+
+				// Loops methods and find a match
+				if ( ! empty( $chosen_method ) && ! isset( $_available_methods[ $chosen_method ] ) ) {
+					foreach ( $_available_methods as $method_id => $method ) {
+						if ( strpos( $method->id, $chosen_method ) === 0 ) {
+							$chosen_method = $method->id;
+							break;
+						}
+					}
+				}
+
+				if ( empty( $chosen_method ) || ! isset( $_available_methods[$chosen_method] ) ) {
+
+					// Default to cheapest
+					foreach ( $_available_methods as $method_id => $method ) {
+						/**
+						 * code by daniel:
+						 * in case method triggers an error, it's value is 1 (cheapest)
+						 * so don't use it
+						 */
+						if (!$method->error)
+						if ( $method->cost < $_cheapest_cost || ! is_numeric( $_cheapest_cost ) ) {
+							$_cheapest_cost 	= $method->cost;
+							$_cheapest_method 	= $method_id;
+						}
+					}
+					$chosen_method = $_cheapest_method;
+				}
+
+				// Store chosen method
+				$woocommerce->session->chosen_shipping_method = $chosen_method;
+
+				// Do action for this chosen method
+				do_action( 'woocommerce_shipping_method_chosen', $chosen_method );
+			}
+
+			if ( $chosen_method ) {
+				$this->shipping_total 	= $_available_methods[ $chosen_method ]->cost;
+				$this->shipping_taxes 	= $_available_methods[ $chosen_method ]->taxes;
+				$this->shipping_label 	= $_available_methods[ $chosen_method ]->label;
+			}
+		}
+	}
+
+	/**
+	 * calculate_shipping_for_package function.
+	 *
+	 * Calculates each shipping methods cost. Rates are cached based on the package to speed up calculations.
+	 *
+	 * @access public
+	 * @param array $package cart items
+	 */
+	function calculate_shipping_for_package( $package = array() ) {
+		if ( ! $this->enabled ) return false;
+		if ( ! $package ) return false;
+
+		// Check if we need to recalculate shipping for this package
+		$package_hash = 'wc_ship_' . md5( json_encode( $package ) );
+
+		if ( false === ( $stored_rates = get_transient( $package_hash ) ) ) {
+
+			// Calculate shipping method rates
+			$package['rates'] = array();
+
+			foreach ( $this->load_shipping_methods( $package ) as $shipping_method ) {
+
+				if ( $shipping_method->is_available( $package ) ) {
+
+					// Reset Rates
+					$shipping_method->rates = array();
+
+					// Calculate Shipping for package
+					$shipping_method->calculate_shipping( $package );
+
+					// Place rates in package array
+					if ( ! empty( $shipping_method->rates ) && is_array( $shipping_method->rates ) )
+						foreach ( $shipping_method->rates as $rate )
+							$package['rates'][$rate->id] = $rate;
+				}
+
+			}
+
+			// Filter the calculated rates
+			$package['rates'] = apply_filters( 'woocommerce_package_rates', $package['rates'], $package );
+
+			// Store
+			set_transient( $package_hash, $package['rates'], 60 * 60 ); // Cached for an hour
+
+		} else {
+
+			$package['rates'] = $stored_rates;
+
+		}
+
+		return $package;
+	}
+
+	/**
+	 * get_available_shipping_methods function.
+	 *
+	 * Gets all available shipping methods which have rates.
+	 *
+	 * @todo Currently we support 1 shipping method per order so this function merges rates - in the future we should offer
+	 * 1 rate per package and list them accordingly for user selection
+	 *
+	 * @access public
+	 * @return array
+	 */
+	function get_available_shipping_methods() {
+		if ( ! $this->enabled ) return;
+		if ( empty( $this->packages ) ) return;
+
+		// Loop packages and merge rates to get a total for each shipping method
+		$available_methods = array();
+
+		foreach ( $this->packages as $package ) {
+			if ( ! $package['rates'] ) continue;
+
+			foreach ( $package['rates'] as $id => $rate ) {
+
+				if ( isset( $available_methods[$id] ) ) {
+					// Merge cost and taxes - label and ID will be the same
+					$available_methods[$id]->cost += $rate->cost;
+
+					foreach ( array_keys( $available_methods[$id]->taxes + $rate->taxes ) as $key ) {
+					    $available_methods[$id]->taxes[$key] = ( isset( $rate->taxes[$key] ) ? $rate->taxes[$key] : 0 ) + ( isset( $available_methods[$id]->taxes[$key] ) ? $available_methods[$id]->taxes[$key] : 0 );
+					}
+				} else {
+					$available_methods[$id] = $rate;
+				}
+
+			}
+
+		}
+
+		/**
+		 * following line added by daniel
+		 **/
+		/*if (class_exists('aurelie_Shipping')){
+			$aurelie_Shipping = new aurelie_Shipping();
+			$available_methods = $aurelie_Shipping->convert_available_methods($available_methods);
+		}*/
+		/**
+		 * following line is replaced by above block
+		 */
+		//var_dump($available_methods);
+		$available_methods = $this->convert_available_methods($available_methods);
+		
+		return apply_filters( 'woocommerce_available_shipping_methods', $available_methods );
+	}
+	
+	/**
+	 * daniel's code
+	 */
+	
+	private function product_get_dimensions($string){
+    	$a = explode(" ", $string);
+    	$dimensions['length'] = $a[0];
+    	$dimensions['width'] = $a[2];
+    	$dimensions['height'] = $a[4];
+    	return $dimensions;
+    }
+    
+	public function convert_available_methods($available_methods){
+		global $woocommerce;
+		
+		//var_dump($woocommerce->session->chosen_shipping_method);//die();
+		
+		require_once("include/cargonizer.php");
+		$crg_api_key = "5ef3837dd827b5431c8ce8f542b0aa8cd6844793";
+		$crg_sender_id = "1051";
+		
+		$crg_consignment_url = "http://sandbox.cargonizer.no/consignment_costs.xml";
+		$crg_transport_url = "http://sandbox.cargonizer.no/transport_agreements.xml";
+		
+		$debug = 0;
+		
+		$crg = new cargonizer($crg_api_key,$crg_sender_id,$crg_consignment_url);
+		
+		//now get the values to be send to cargonizer
+
+		$checkout = $woocommerce->checkout();
+		
+		$shipping_country = $checkout->get_value('shipping_country');
+		
+		$shipping_first_name = $checkout->get_value('shipping_first_name');
+		
+		$shipping_last_name = $checkout->get_value('shipping_last_name');
+		$shipping_company = $checkout->get_value('shipping_company');
+		
+		if (isset($_POST['s_address']))
+			$shipping_address_1 = $_POST['s_address'];
+		else
+			$shipping_address_1 = $checkout->get_value('shipping_address_1');
+			
+		$shipping_address_2 = $checkout->get_value('shipping_address_2');
+		
+		if (isset($_POST['s_postcode']))
+			$shipping_postcode = $_POST['s_postcode'];
+		else	
+			$shipping_postcode = $checkout->get_value('shipping_postcode');
+			
+		if (isset($_POST['s_city']))
+			$shipping_city = $_POST['s_city'];
+		$shipping_city = $checkout->get_value('shipping_city');
+
+		$shipping_state = $checkout->get_value('shipping_state');
+		//echo $shipping_first_name;die();
+		$items = array();
+	
+		$total_weight = NULL; //used for Small Packages shipping option
+		
+		if (sizeof($woocommerce->cart->get_cart())>0) :
+			$k = 0;
+			foreach ($woocommerce->cart->get_cart() as $cart_item_key => $values) :
+				$_product = $values['data'];
+				
+				$dimensions = $this->product_get_dimensions($_product->get_dimensions());
+				
+				$items[$k]['item']['_attribs']['amount'] = 1; //$values['quantity']?? 1 = Number of parcels. Cargonizer will generate this amount of labels
+				$items[$k]['item']['_attribs']['weight'] = $_product->get_weight() * $values['quantity'];
+				$items[$k]['item']['_attribs']['length'] = $dimensions['length'];
+				$items[$k]['item']['_attribs']['width'] = $dimensions['width'];
+				$items[$k]['item']['_attribs']['height'] = $dimensions['height'];
+				$items[$k]['item']['_attribs']['description'] = $_product->get_title();
+				$items[$k]['item']['_attribs']['type'] = "PK";
+				
+				$total_weight += $items[$k]['item']['_attribs']['weight'];
+				
+				$k++;
+				
+			endforeach;
+		endif;
+		
+		/**
+		 * in case checkout as guest, the code should not interogate cargonizer yet, 
+		 * because addess data is not defined!
+		 */
+		if (!$shipping_address_1 && !$shipping_postcode && !$shipping_city){
+			foreach ($available_methods as $key=>$value){
+				$available_methods[$key]->error = TRUE;
+			}
+			return $available_methods;
+		}
+
+		/**
+		 * check to see if Bring Notification Service (bring_e_varsle_for_utlevering) is enabled 
+		 */
+		$bring_e_varsle_for_utlevering = $this->check_for_bring_notification_service();
+		//var_dump($available_methods);
+		foreach ($available_methods as $key=>$value){
+			if ($key == 'aurelie_shipping__' . md5('På Døren')){
+				$crg_data['consignments'] = array(
+					"consignment" => array(
+						"_attribs" => array(
+							"transport_agreement" => "1048",
+							"estimate" => "true",
+						),
+						"values" => array(
+							"value" => array(
+								"_attribs" => array(
+									"name" => "ordre_id",
+									"value" => "123456",
+								),
+							),
+						),
+						"collection" => array(
+							"name" => "Dagens",
+							"transfer_date" => date("Y-m-d\TH:i:s",strtotime("+2 hour")),
+						),
+						"product" => "bring_pa_doren",
+						"parts" => array(
+							"consignee" => array(
+								"customer-number" => "123456789",
+								"name" => $shipping_first_name . " " . $shipping_last_name,
+								"address1" => $shipping_address_1,
+								"address2" => $shipping_address_2,
+								"country" => $shipping_country,
+								"postcode" => $shipping_postcode,
+								"city" => $shipping_city,
+								"phone" => "66006600",
+							),
+						),
+						"items" => $items, 
+						"services" => array(
+							/*array("service" => array(
+								"_attribs" => array("id"=>"bring_oppkrav"),
+								"amount" => "100",
+								"account_number" => "123456789",
+								"kid" => "123456789",
+							)),*/
+							$bring_e_varsle_for_utlevering
+						),
+						"references" => array(
+							"consignor" => "123456",
+							"consignee" => "Ordre.nr: 123456",
+						),
+						"messages" => array(
+							"carrier" => "test_message_carrier",
+							"consignee" => "test_message_consignee",
+						),
+					),
+				);
+				//var_dump($crg_data['consignments']['consignment']);
+			} else if ($key == 'aurelie_shipping__' . md5('Minipakke')){
+				$crg_data['consignments'] = array(
+					"consignment" => array(
+						"_attribs" => array(
+							"transport_agreement" => "1048",
+							"estimate" => "true",
+						),
+						"values" => array(
+							"value" => array(
+								"_attribs" => array(
+									"name" => "ordre_id",
+									"value" => "123456",
+								),
+							),
+						),
+						"collection" => array(
+							"name" => "Dagens",
+							"transfer_date" => date("Y-m-d\TH:i:s",strtotime("+2 hour")),
+						),
+						"product" => "bring_minipakke",
+						"parts" => array(
+							"consignee" => array(
+								"customer-number" => "123456789",
+								"name" => $shipping_first_name . " " . $shipping_last_name,
+								"address1" => $shipping_address_1,
+								"address2" => $shipping_address_2,
+								"country" => $shipping_country,
+								"postcode" => $shipping_postcode,
+								"city" => $shipping_city,
+								"phone" => "66006600",
+							),
+						),
+						"items" => $items, 
+						"services" => array(
+							/**
+		    				 * following service enables 'cash on delivery'
+		    				 */
+							/*array("service" => array(
+								"_attribs" => array("id"=>"bring_oppkrav"),
+								"amount" => "100",
+								"account_number" => "123456789",
+								"kid" => "123456789",
+							)),*/
+							/*array("service" => array(
+								"_attribs" => array("id" => "bring_e_varsle_for_utlevering")
+							))*/
+						),
+						"references" => array(
+							"consignor" => "123456",
+							"consignee" => "Ordre.nr: 123456",
+						),
+						"messages" => array(
+							"carrier" => "test_message_carrier",
+							"consignee" => "test_message_consignee",
+						),
+					),
+				);
+			} else if ($key == 'aurelie_shipping__' . md5('MyPack')){
+				//TODO::
+			}
+			
+			if (!isset($value->fetched) && 
+				!($key == 'aurelie_shipping__' . md5('Fri frakt')) && 
+				!($key == 'aurelie_shipping__' . md5('Small Packages'))
+			){
+				$crg->requestConsignment($crg_data,$debug,$crg_consignment_url, TRUE);
+				//var_dump($crg->getErrors());
+				$error = $crg->check_xml_response();
+				$available_methods[$key]->fetched = true;
+				if (!$error) {
+					$available_methods[$key]->cost = $crg->getEstimatedCostFromXml();
+					$available_methods[$key]->error = FALSE;
+				}
+				else {
+					$available_methods[$key]->error = TRUE;
+				}
+			}	
+			
+			if ($key == 'aurelie_shipping__' . md5('Fri frakt')){
+				$available_methods[$key]->error = FALSE;
+				$available_methods[$key]->cost = 0;
+			}
+
+			if ($key == 'aurelie_shipping__' . md5('Small Packages')){
+				$available_methods[$key]->fetched = true;
+				$available_methods[$key]->cost = $this->calculate_small_package_shipping_cost($total_weight);
+				$available_methods[$key]->error = FALSE;
+			}
+			//$result_xml = $crg->getResultXml();
+		}
+
+		return $available_methods;
+	}
+	
+	/**
+	 * this function is used to calculate the shipping cost based on cost per kg and by pkg
+	 * as defined in aurelie shipping plugin under "Small Packages" shipping option
+	 */
+	private function calculate_small_package_shipping_cost($total_weight){
+		$option = get_option( 'woocommerce_aurelie_shipping_settings' );
+		$cost_per_package 	= $option['wout_c_per_pk'];
+		$cost_per_kilogram 	= $option['wout_c_per_kg'];
+		$total_weight = ceil($total_weight);
+		
+		$cost = $cost_per_package + $total_weight * $cost_per_kilogram;
+		
+		return $cost;
+	}
+	
+	
+	private function check_for_bring_notification_service(){
+		$option = get_option( 'woocommerce_aurelie_shipping_settings' );
+		$bns = array();
+		
+		if ($option['bring_notification'] == 'yes'){
+			$bns[] = array("service" => array(
+				"_attribs" => array("id" => "bring_e_varsle_for_utlevering")
+			));
+		}
+		return $bns;
+	}
+	/**
+	 * end of daniel's code
+	 */
+
+	/**
+	 * reset_shipping function.
+	 *
+	 * Reset the totals for shipping as a whole.
+	 *
+	 * @access public
+	 * @return void
+	 */
+	function reset_shipping() {
+		global $woocommerce;
+		unset( $woocommerce->session->chosen_shipping_method );
+		$this->shipping_total = 0;
+		$this->shipping_taxes = array();
+		$this->shipping_label = null;
+		$this->packages = array();
+	}
+
+
+	/**
+	 * process_admin_options function.
+	 *
+	 * Saves options on the shipping setting page.
+	 *
+	 * @access public
+	 * @return void
+	 */
+	function process_admin_options() {
+
+		$default_shipping_method = ( isset( $_POST['default_shipping_method'] ) ) ? esc_attr( $_POST['default_shipping_method'] ) : '';
+		$method_order = ( isset( $_POST['method_order'] ) ) ? $_POST['method_order'] : '';
+
+		$order = array();
+
+		if ( is_array( $method_order ) && sizeof( $method_order ) > 0 ) {
+			$loop = 0;
+			foreach ($method_order as $method_id) {
+				$order[$method_id] = $loop;
+				$loop++;
+			}
+		}
+
+		update_option( 'woocommerce_default_shipping_method', $default_shipping_method );
+		update_option( 'woocommerce_shipping_method_order', $order );
+	}
+
+}
+
+/**
+ * Register a shipping method
+ *
+ * Registers a shipping method ready to be loaded. Accepts a class name (string) or a class object.
+ *
+ * @package		WooCommerce/Classes/Shipping
+ * @since 1.5.7
+ */
+function woocommerce_register_shipping_method( $shipping_method ) {
+	$GLOBALS['woocommerce']->shipping->register_shipping_method( $shipping_method );
+}

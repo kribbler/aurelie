@@ -1,0 +1,173 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce PayEx Gateway v1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-01-09 11:52+0100\n"
+"PO-Revision-Date: 2013-06-24 02:48:59+0000\n"
+"Last-Translator: Niklas <niklas@krokedil.se>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-Language: \n"
+"X-Poedit-Country: \n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Textdomain-Support: yes"
+
+#: class-payex-pm.php:13
+#: class-payex-pm.php:98
+#: gateway-payex.php:73
+#@ payex
+msgid "PayEx"
+msgstr ""
+
+#: class-payex-pm.php:89
+#@ payex
+msgid "Enable/Disable"
+msgstr "Aktiver / deaktiver"
+
+#: class-payex-pm.php:91
+#@ payex
+msgid "Enable PayEx"
+msgstr "Aktiver PayEx"
+
+#: class-payex-pm.php:95
+#@ payex
+msgid "Title"
+msgstr "Tittel"
+
+#: class-payex-pm.php:97
+#: class-payex-pm.php:103
+#@ payex
+msgid "This controls the title which the user sees during checkout."
+msgstr "Dette kontrollerer tittel som brukeren ser i kassen."
+
+#: class-payex-pm.php:101
+#@ payex
+msgid "Description"
+msgstr "Beskrivelse"
+
+#: class-payex-pm.php:107
+#@ payex
+msgid "Account Number"
+msgstr "Kontonummer"
+
+#: class-payex-pm.php:109
+#@ payex
+msgid "Please enter your PayEx Account Number; this is needed in order to take payment!"
+msgstr "Skriv inn e-PayEx konto nummer, og dette er nødvendig for å ta betaling!"
+
+#: class-payex-pm.php:113
+#@ payex
+msgid "Encrypted Key"
+msgstr "Kryptert nøkkel"
+
+#: class-payex-pm.php:115
+#@ payex
+msgid "Please enter your PayEx Encrypted Key; this is needed in order to take payment!"
+msgstr "Skriv inn e-PayEx kryptert nøkkel, og dette er nødvendig for å ta betaling!"
+
+#: class-payex-pm.php:119
+#@ payex
+msgid "Purchase Operation"
+msgstr "Kjøp Operation"
+
+#: class-payex-pm.php:122
+#@ payex
+msgid "If AUTHORIZATION is submitted, this indicates that the order will be a 2-phased transaction if the payment method supports it. SALE is a 1-phased transaction."
+msgstr "Dersom fullmakt er sendt, tyder dette på at ordren vil bli en to-faset transaksjon hvis betalingsmåten støtter det. SALG er en 1-faset transaksjon."
+
+#: class-payex-pm.php:126
+#@ payex
+msgid "Language"
+msgstr "Språk"
+
+#: class-payex-pm.php:130
+#@ payex
+msgid "Locale of pages displayed by payex during payment."
+msgstr "Locale sider vises av PayEx under betaling."
+
+#: class-payex-pm.php:134
+#@ payex
+msgid "Test Mode"
+msgstr ""
+
+#: class-payex-pm.php:136
+#@ payex
+msgid "Enable PayEx Test Mode."
+msgstr ""
+
+#: class-payex-pm.php:140
+#@ payex
+msgid "Debug"
+msgstr ""
+
+#: class-payex-pm.php:142
+#@ payex
+msgid "Enable logging (<code>woocommerce/logs/payex.txt</code>)"
+msgstr ""
+
+#: class-payex-pm.php:261
+#: class-payex-pm.php:262
+#, php-format
+#@ payex
+msgid "PayEx error: %s"
+msgstr ""
+
+#: class-payex-pm.php:289
+#@ payson
+msgid "Thank you for your order."
+msgstr ""
+
+#: class-payex-pm.php:449
+#, php-format
+#@ payex
+msgid "PayEx payment completed. PayEx Transaction Number: %s"
+msgstr "PayEx betaling fullført. PayEx Transaction Antall: %s"
+
+#: class-payex-pm.php:457
+#, php-format
+#@ payex
+msgid "PayEx Payment unsuccessful. PayEx Transaction Number: %s PayEx Transaction Status: %s."
+msgstr "PayEx Betaling mislykket. PayEx Transaction Antall: %s PayEx Transaction Status: %s."
+
+#: class-payex-pm.php:462
+#, php-format
+#@ payex
+msgid "PayEx Payment cancelled. PayEx Transaction Number: %s PayEx Transaction Status: %s."
+msgstr "PayEx Betaling kansellert. PayEx Transaction Antall: %s PayEx Transaction Status: %s."
+
+#: class-payex-pm.php:467
+#, php-format
+#@ payex
+msgid "PayEx Payment refunded. PayEx Transaction Number: %s."
+msgstr "PayEx Betaling tilbakebetalt. PayEx Transaction Antall: %s."
+
+#: class-payex-pm.php:473
+#, php-format
+#@ payex
+msgid "PayEx Payment On Hold. PayEx Transaction Number: %s PayEx Transaction Status: %s."
+msgstr "PayEx Betaling Sperret. PayEx Transaction Antall: %s PayEx Transaction Status: %s."
+
+#: gateway-payex.php:82
+#@ payex
+msgid "Choose Swedish Krona or Euro as currency in Pricing Options and Sweden or Finland as Base Country to enable the PayEx Gateway."
+msgstr ""
+
+#: gateway-payex.php:90
+#, php-format
+#@ klarna
+msgid "PayEx works by sending the user to <a href=\"http://www.payex.com\">PayEx</a> to enter their payment information. With PayEx your customers can pay by credit card and via instant bank transactions. Documentation <a href=\"%s\" target=\"_blank\">can be found here</a>."
+msgstr ""
+
+#: class-payex-pm.php:197
+#@ payex
+msgid "Order Number"
+msgstr "Ordrenummer"
+

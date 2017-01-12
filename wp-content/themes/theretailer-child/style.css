@@ -1,0 +1,164 @@
+/*
+Theme Name: The Retailer Child Theme
+Theme URI: http://theretailer.getbowtied.com/
+Description: This is a child theme for The Retailer.
+Author: Get Bowtied
+Author URI: http: //www.getbowtied.com/
+Template: theretailer
+Version: 1.6
+*/
+
+@import url("../theretailer/style.css");
+
+/****************************************************************/
+/*************** ADD YOUR CUSTOM CSS IN THIS AREA ***************/
+/****************************************************************/
+
+.cat-item{
+	font-size: 14px;
+	background-color: #f4f4f4;
+}
+
+.cat-item a{
+	margin-left: 10px;
+}
+
+.category_header{
+	display: none;
+}
+
+.wp-image-2444{
+	width: 100% !important;
+	height: auto !important;
+}
+
+#vcard_google_info{display: none;}
+
+.items_found_cart{display: none !important;}
+
+.attr_name1{float: left; padding-right: 1em;}
+.attr_value1{float: left;}
+
+.variations_button .buttons_added{
+	margin-right: 20px !important;
+}
+#engraving_info{
+	/*display: inline-block;*/
+    margin-top: -40px;
+    padding: 20px 0 20px 0px;
+    display: block;
+    clear: both;
+}
+
+#engraving_text{
+	padding: 10px;
+	font-size: 16px;
+	min-width: 200px;
+	color: #68666b;
+}
+
+.reset_variations{
+	display: none !important;
+}
+
+.summary .product_meta{
+	margin-top: 0 !important;
+}
+
+.small_sep.margin50_20{
+	margin-top: 20px !important;
+}
+
+.product_navigation .nav-back{
+	font-size: 13px;
+}
+
+.product_main_infos .nav-next-single, .product_main_infos .nav-previous-single, .product_main_infos .nav-prev-next-txt{
+	display: none;
+}
+
+.product_main_infos .product_navigation{
+	border-bottom: 0;
+	margin-bottom: 0;
+}
+
+.woocommerce div.product div.images img, .woocommerce #content div.product div.images img, .woocommerce-page div.product div.images img, .woocommerce-page #content div.product div.images img{
+	width: 100% !important;
+}
+
+.widget ul li, .widget ul li ul li {
+	padding: 0 !important;
+}
+
+.widget ul li a{
+	display: block;
+	padding: 6px 10px 6px 10px !important;
+}
+
+.widget ul li ul.children li a{
+	padding-left: 30px !important;
+}
+.widget ul li a:hover, .current-cat a{
+	background-color: rgb(108,182,191) !important;
+	color: #fff !important;
+	text-decoration: none;
+}
+
+.cat-item a{
+	margin: 0 !important;
+}
+
+.widget ul li ul{
+	margin: 0 !important;
+}
+
+.current-cat ul li a{
+	background-color: inherit !important;
+	color: #777 !important;
+}
+
+/*.widget ul li a:hover, .current-cat a{
+	background-color: rgb(108,182,191) !important;
+	text-decoration: none;
+}
+
+.current-cat ul li a{
+	color: #777 !important;
+}
+*/
+
+.listing_products .product_item h3 {
+	display: none;
+}
+
+.product_item .image_container {
+	height: 190px;
+}
+
+.product_item p {
+	height: 65px;
+	display: table-cell;
+	vertical-align: bottom;
+	font-size: 14px !important;
+}
+@media only screen and (max-width: 919px) {
+	.d_homepage_image{
+		display: none;
+		width: 100% !important; 
+		height: auto !important
+	}
+
+	.product_item {
+		width: 100%;
+	}
+
+	.product_item .image_container {
+		width: 100%;
+		max-height: 1000px;
+		height: auto;
+	}
+}
+
+/****************************************************************/
+/****************************************************************/
+/****************************************************************/

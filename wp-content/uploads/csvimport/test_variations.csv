@@ -1,0 +1,5 @@
+sku,product_type,post_title,price,stock,post_parent,variation,var_length,images,default_attributes
+SKU1,variation_master,t-shirt,,,,length,,http://www.safira.se/shop/28052/art52/h1234/16711234-origpic-a97a5c.jpg,Length->18 cm
+SKU2,product_variation,t-shirt,25,10,SKU1,,18 cm,,
+SKU2,product_variation,t-shirt,25,10,SKU1,,19 cm,,
+SKU2,product_variation,t-shirt,25,10,SKU1,,20 cm,,

@@ -1,0 +1,122 @@
+<div id="icon-tools" class="icon32"><br /></div>
+<h2><?php _e( 'WoOKU Product Monitoring', 'wooku-monitoring' ); ?></h2>
+
+<?php //include ('wooku-monitoring-menu.php');?>
+
+<?php 
+$monitoring_sets = get_monitoring_sets(); //var_dump($monitoring_sets);
+$paused_processes = get_paused_processes();
+if ($paused_processes){?>
+	<h3>Paused Processes</h3>
+	<table class="wp-list-table widefat fixed pages">
+		<tr>
+			<th>Started at</th>
+			<th>Paused at</th>
+			<th>Processed<br />Total</th>
+			<th>Set Name</th>
+			<th>Check<br />Http</th>
+			<th>Actions</th>
+		</tr>
+	<?php foreach ($paused_processes as $process){?>
+		<tr>
+			<td><?php echo $process->start_date?></td>
+			<td><?php echo $process->pause_date?></td>
+			<td><?php echo $process->offset . ' / '; echo $process->rows_unchecked + $process->offset?></td>
+			<td><?php echo ($process->set_name) ? $process->set_name : '-'?></td>
+			<td><?php echo ($process->check_http) ? '<img align="left" src="'.plugin_dir_url( __FILE__ ).'images/check.png" />' : ''?></td>
+			<th>
+				<a href="<?php echo get_admin_url().'tools.php?page=wooku-monitoring&action=test&process_id=' . $process->id?>"><img src="<?php echo plugin_dir_url( __FILE__ ); ?>images/resume.png" width="20" /></a>
+				<a href="<?php echo get_admin_url().'tools.php?page=wooku-monitoring&action=delete-process&id=' . $process->id?>" onclick="return confirm('Are you sure want to delete this set?');"><img src="<?php echo plugin_dir_url( __FILE__ ); ?>images/Actions-edit-delete-icon.png" width="20" /></a>
+			</th>
+		</tr>
+	<?php } ?>
+	</table><br />
+<?php } 
+//var_dump($paused_processes);
+if ($monitoring_sets){?>
+	<div id="dhtmlgoodies_dragDropContainer">
+		<div id="dhtmlgoodies_listOfItems">
+			<div>
+				<p>Current monitoring sets</p>
+				<ul id="groups">
+					<?php foreach ($monitoring_sets as $set):?>
+						<li>
+							<b><?php echo $set->name?></b><br />
+							<?php foreach ($set->Values as $value):?>
+								<?php echo $value->value?><br />						
+							<?php endforeach;?>
+							<a href="<?php echo get_admin_url().'tools.php?page=wooku-monitoring&action=edit-set&id=' . $set->id?>"><img src="<?php echo plugin_dir_url( __FILE__ ); ?>images/Actions-document-edit-icon.png" width="20" /></a>
+							<a href="<?php echo get_admin_url().'tools.php?page=wooku-monitoring&action=delete-set&id=' . $set->id?>" onclick="return confirm('Are you sure want to delete this set?');"><img src="<?php echo plugin_dir_url( __FILE__ ); ?>images/Actions-edit-delete-icon.png" width="20" /></a>
+						</li>
+					<?php endforeach;?>
+				</ul>
+			</div>
+		</div>
+		<div id="dhtmlgoodies_mainContainer">
+		</div>
+	</div>
+<?php }?>
+<div style="float:left">
+	<form id="monitoring_form" enctype="multipart/form-data" method="post" action="<?php echo get_admin_url().'tools.php?page=wooku-monitoring&action=test'; ?>">
+		<p><input name="check_http" type="checkbox" /> Check for http response?</p>
+		<p><input name="check_stock" type="checkbox" /> Check for stock?</p>
+		<p><input name="list_incomplete" type="checkbox" /> Only list incomplete products?</p>
+		<button class="button-primary" type="submit"><?php _e( 'Start the test', 'wooku-monitoring' ); ?></button>
+	</form>
+</div>
+<div class="clear"></div>
+
+<?php 
+$finished_processes = get_finished_processes();
+if ($finished_processes){?>
+	<h3>Finished Processes</h3>
+	<table class="wp-list-table widefat fixed pages">
+		<tr>
+			<th>Started at</th>
+			<th>Last<br />Paused at</th>
+			<th>Total</th>
+			<th>Seller</th>
+			<th>Set Name</th>
+			<th>Check<br />Http</th>
+			<th>Check<br />Thumb</th>
+			<th>Check<br />Published</th>
+			<th>Check<br />Maching SKUs</th>
+			<th>List<br />Incomplete</th>
+			<th>List when<br />Text found</th>
+			<th>List when<br />Text not found</th>
+			<th>Actions</th>
+		</tr>
+	<?php foreach ($paused_processes as $process){?>
+		<tr>
+			<td><?php echo $process->start_date?></td>
+			<td><?php echo $process->pause_date?></td>
+			<td><?php echo $process->rows_unchecked + $process->offset?></td>
+			<td><?php echo $process->seller?></td>
+			<td><?php echo ($process->set_name) ? $process->set_name : '-'?></td>
+			<td><?php echo ($process->check_http) ? '<img align="left" src="'.plugin_dir_url( __FILE__ ).'images/check.png" />' : ''?></td>
+			<td><?php echo ($process->check_thumb) ? '<img align="left" src="'.plugin_dir_url( __FILE__ ).'images/check.png" />' : ''?></td>
+			<td><?php echo ($process->check_published) ? '<img align="left" src="'.plugin_dir_url( __FILE__ ).'images/check.png" />' : ''?></td>
+			<td><?php echo ($process->check_matching_skus) ? '<img align="left" src="'.plugin_dir_url( __FILE__ ).'images/check.png" />' : ''?></td>
+			<td><?php echo ($process->list_incomplete) ? '<img align="left" src="'.plugin_dir_url( __FILE__ ).'images/check.png" />' : ''?></td>
+			<td><?php echo ($process->list_when_text_found) ? '<img align="left" src="'.plugin_dir_url( __FILE__ ).'images/check.png" />' : ''?></td>
+			<td><?php echo ($process->list_when_text_not_found) ? '<img align="left" src="'.plugin_dir_url( __FILE__ ).'images/check.png" />' : ''?></td>
+			<th>
+				<a href="<?php echo get_admin_url().'tools.php?page=wooku-monitoring&action=test&process_id=' . $process->id?>"><img src="<?php echo plugin_dir_url( __FILE__ ); ?>images/resume.png" width="20" /></a>
+				<a href="<?php echo get_admin_url().'tools.php?page=wooku-monitoring&action=delete-process&id=' . $process->id?>" onclick="return confirm('Are you sure want to delete this set?');"><img src="<?php echo plugin_dir_url( __FILE__ ); ?>images/Actions-edit-delete-icon.png" width="20" /></a>
+			</th>
+		</tr>
+	<?php } ?>
+	</table><br />
+<?php } ?>
+<script type="text/javascript">
+jQuery(document).ready(function($){
+	$('#monitoring_form').submit(function(){
+		/*
+		var form_set = $('#form_set').val();
+		if (!form_set){
+			$('#form_set').css('border', '1px solid red');
+			return false;
+		}*/
+	});
+});
+</script>

@@ -1,0 +1,767 @@
+<?php
+/*
+    Plugin Name: Aurelie Shipping Cargonizer
+    Plugin URI: http://aurelie.no
+    Description: Aurelie Shipping Cargonizer
+    Version: 1
+    Author: Daniel Oraca
+    Author URI:     
+ */
+
+/**
+ * Check if WooCommerce is active
+ **/
+
+add_action('plugins_loaded', 'init_aurelie_shipping', 0);
+
+function init_aurelie_shipping() {
+    if ( ! class_exists( 'WC_Shipping_Method' ) ) return;
+    
+    class aurelie_Shipping extends WC_Shipping_Method {
+    	
+    	function __construct() { 
+			$this->id = 'aurelie_shipping';
+			$this->method_title = __( 'Aurelie Shipping', 'woocommerce' );
+		
+			$this->admin_page_heading 	= __( 'Weight based shipping', 'woocommerce' );
+			$this->admin_page_description 	= __( 'Define shipping by weight and country', 'woocommerce' );
+
+			//cargonizer info
+			$this->crg_api_key 				= "5ef3837dd827b5431c8ce8f542b0aa8cd6844793"; 
+			$this->crg_sender_id 			= "1051";
+			$this->crg_consignment_url 		= "http://sandbox.cargonizer.no/consignments.xml";
+			$this->crg_transport_url 		= "http://sandbox.cargonizer.no/transport_agreements.xml";
+			$this->crg_transport_cost_url	= "http://sandbox.cargonizer.no/consignment_costs.xml";
+			$this->crg_data 				= NULL;
+			$this->crg_debug 				= 0;
+			$this->crg_package_number		= NULL;
+			$this->crg_save_response_as_text= FALSE;
+			
+			//data to be send to cargonizer
+			$this->shipping_country 		= NULL;
+			$this->shipping_first_name 		= NULL;
+			$this->shipping_last_name 		= NULL;
+			$this->shipping_company 		= NULL;
+			$this->shipping_address_1 		= NULL;
+			$this->shipping_address_2 		= NULL;
+			$this->shipping_postcode 		= NULL;
+			$this->shipping_city 			= NULL;
+			$this->shipping_state 			= NULL;
+			$this->shipping_email			= NULL;
+			$this->shipping_mobile			= NULL;
+			$this->billing_phone			= NULL;
+			$this->customer_number			= NULL;
+			$this->order_id					= NULL;
+			
+			$this->items 					= array();
+			
+			$this->shipping_method_md5		= NULL;
+			$this->shipping_method_name		= NULL;
+			$this->alert_method				= array();
+			
+			add_action( 'woocommerce_update_options_shipping_' . $this->id, array( &$this, 'sync_countries' ) );
+			add_action( 'woocommerce_update_options_shipping_' . $this->id, array( &$this, 'process_admin_options' ) );
+
+			add_action( 'woocommerce_checkout_order_processed', array($this, 'extra_checkout' ) );
+			
+			load_plugin_textdomain('aurelie_shipping', PLUGINDIR.'/aurelie_shipping_cargonizer/languages','aurelie_shipping_cargonizer/languages');
+			
+			
+			$this->init();      
+    	}
+    
+		function init() {
+			$this->init_form_fields();
+			$this->init_settings();
+
+			$this->enabled			= $this->settings['enabled'];
+			$this->title			= $this->settings['title'];
+			$this->country_group_no	= $this->settings['country_group_no'];
+			$this->sync_countries	= $this->settings['sync_countries'];
+			$this->availability		= 'specific';
+			$this->countries		= $this->settings['countries'];
+			$this->type				= 'order';
+			$this->tax_status		= $this->settings['tax_status'];
+			$this->fee				= $this->settings['fee'];
+			$this->options			= isset( $this->settings['options'] ) ? $this->settings['options'] : '';
+			$this->options			= (array) explode( "\n", $this->options );			
+    	}
+    	
+    function init_form_fields() {
+    	global $woocommerce;
+
+        $this->form_fields = array(
+				'enabled' => array(
+					'title' 		=> __( 'Enable/Disable', 'woocommerce' ),
+					'type' 			=> 'checkbox',
+					'label' 		=> __( 'Enable this shipping method', 'woocommerce' ),
+					'default' 		=> 'no',
+				),
+				'title' => array(
+					'title' 		=> __( 'Method Title', 'woocommerce' ),
+					'type' 			=> 'text',
+					'description' 	=> __( 'This controls the title which the user sees during checkout.', 'woocommerce' ),
+					'default'		=> __( 'Aurelie Shipping', 'woocommerce' ),
+				),
+				/*'tax_status' => array(
+					'title' 		=> __( 'Tax Status', 'woocommerce' ),
+					'type' 			=> 'select',
+					'description' 	=> '',
+					'default' 		=> 'taxable',
+					'options'		=> array(
+						'taxable' 	=> __( 'Taxable', 'woocommerce' ),
+						'none' 		=> __( 'None', 'woocommerce' ),
+					),
+				),
+				'fee' => array(
+					'title' 		=> __( 'Handling Fee', 'woocommerce' ),
+					'type' 			=> 'text',
+					'description'	=> __( 'Fee excluding tax. Enter an amount, e.g. 2.50. Leave blank to disable.', 'woocommerce' ),
+					'default'		=> '',
+				),*/
+				'options' => array(
+					'title' 		=> __( 'Shipping Rates', 'woocommerce' ),
+					'type' 			=> 'textarea',
+					'description'	=> __( 'Set available shipping rates. Example: <code>Henting i butikk (MyPack)</code>. Example: <code>Post i butikk - Postkontor</code>. Example: <code>Bring</code>.', 'woocommerce' ),
+					'default'		=> '',
+				),
+			);  
+			
+    	}
+    	/*
+	    function display_country_groups() {
+	        global $woocommerce;  
+	        $number = $this->country_group_no;
+	        for($counter = 1; $number >= $counter; $counter++) {
+	
+	            $this->form_fields['countries'.$counter] =  array(
+	                    'title'     => sprintf(__( 'Country Group %s', 'woocommerce' ), $counter),
+	                    'type'      => 'multiselect',
+	                    'class'     => 'chosen_select',
+	                    'css'       => 'width: 450px;',
+	                    'default'   => '',
+	                    'options'   => $woocommerce->countries->countries
+	            );
+	        }    
+	    }*/
+		    
+	    function calculate_shipping($package = array()) {
+	        global $woocommerce;
+            $rates      = $this->get_rates();
+            $weight     = $woocommerce->cart->cart_contents_weight;
+            $taxable    = ($this->tax_status == 'taxable') ? true : false;
+            
+            foreach ($rates as $a){
+            	$rate = array(
+					'id'        => $this->id . "__" . md5(trim($a['name'])),
+					'label'     => $a['name'],
+					'cost'      => $a['value'],
+					'taxes'     => '',
+					'calc_tax'  => 'per_order'
+				);
+        		$this->add_rate( $rate );
+            }	        
+	    }
+	    
+	    public function get_rates(){
+	    	global $woocommerce;
+	    	
+	    	$rates = array();
+	    	if ( sizeof( $this->options ) > 0){
+	    		$k = 0; 
+		    	foreach ( $this->options as $option => $value ) {
+		    		$rates[$k]['name'] = $value;
+		    		$rates[$k]['value'] = "1";
+		    		$k++;
+		    	}
+	    	}
+	    	return $rates;
+	    }
+	    
+	    private function product_get_dimensions($string){
+	    	$a = explode(" ", $string);
+	    	$dimensions['length'] = $a[0];
+	    	$dimensions['width'] = $a[2];
+	    	$dimensions['height'] = $a[4];
+	    	return $dimensions;
+	    }
+	    
+	    public function get_rate_value($name){
+	    	global $woocommerce;
+		echo 'DANIEL';
+			//require_once("include/cargonizer.php");
+			$crg_api_key = "5ef3837dd827b5431c8ce8f542b0aa8cd6844793";
+			$crg_sender_id = "1051";
+			
+			$crg_consignment_url = "http://sandbox.cargonizer.no/consignment_costs.xml";
+			$crg_transport_url = "http://sandbox.cargonizer.no/transport_agreements.xml";
+			
+			$debug = 0;
+			
+			$crg = new cargonizer($crg_api_key,$crg_sender_id,$crg_consignment_url);
+			
+			//now get the values to be send to cargonizer
+	
+			$checkout = $woocommerce->checkout();
+			
+			$shipping_country = $checkout->get_value('shipping_country');
+			
+			$shipping_first_name = $checkout->get_value('shipping_first_name');
+			
+			$shipping_last_name = $checkout->get_value('shipping_last_name');
+			$shipping_company = $checkout->get_value('shipping_company');
+			$shipping_address_1 = $checkout->get_value('shipping_address_1');
+			$shipping_address_2 = $checkout->get_value('shipping_address_2');
+			$shipping_postcode = $checkout->get_value('shipping_postcode');
+			$shipping_city = $checkout->get_value('shipping_city');
+			$shipping_state = $checkout->get_value('shipping_state');
+			
+			$items = array();
+		
+			if (sizeof($woocommerce->cart->get_cart())>0) :
+				$k = 0;
+				foreach ($woocommerce->cart->get_cart() as $cart_item_key => $values) :
+					$_product = $values['data'];
+					
+					$dimensions = $this->product_get_dimensions($_product->get_dimensions());
+					
+					$items[$k]['item']['_attribs']['amount'] = $values['quantity'];
+					$items[$k]['item']['_attribs']['weight'] = $_product->get_weight() * $values['quantity'];
+					$items[$k]['item']['_attribs']['length'] = $dimensions['length'];
+					$items[$k]['item']['_attribs']['width'] = $dimensions['width'];
+					$items[$k]['item']['_attribs']['height'] = $dimensions['height'];
+					$items[$k]['item']['_attribs']['description'] = $_product->get_title();
+					$items[$k]['item']['_attribs']['type'] = "PK";
+					$k++;
+					
+				endforeach;
+			endif;
+			
+	    	if ($name == 'Bring'){
+	    		$crg_data['consignments'] = array(
+					"consignment" => array(
+						"_attribs" => array(
+							"transport_agreement" => "1048",
+							"estimate" => "true",
+						),
+						"values" => array(
+							"value" => array(
+								"_attribs" => array(
+									"name" => "ordre_id",
+									"value" => "123456",
+								),
+							),
+						),
+						"collection" => array(
+							"name" => "Dagens",
+							"transfer_date" => date("Y-m-d\TH:i:s",strtotime("+2 hour")),
+						),
+						"product" => "bring_servicepakke",
+						"parts" => array(
+							"consignee" => array(
+								"customer-number" => "123456789",
+								"name" => $shipping_first_name . " " . $shipping_last_name,
+								"address1" => $shipping_address_1,
+								"address2" => $shipping_address_2,
+								"country" => $shipping_country,
+								"postcode" => $shipping_postcode,
+								"city" => $shipping_city,
+								"phone" => "66006600",
+							),
+						),
+						"items" => $items, 
+						"services" => array(
+							array("service" => array(
+								"_attribs" => array("id"=>"bring_oppkrav"),
+								"amount" => "100",
+								"account_number" => "123456789",
+								"kid" => "123456789",
+							)),
+						),
+						"references" => array(
+							"consignor" => "123456",
+							"consignee" => __("Ordre nr.", "aurelie_shipping") . "123456",
+						),
+						"messages" => array(
+							"carrier" => "test_message_carrier",
+							"consignee" => "test_message_consignee",
+						),
+					),
+				);
+	    	} else if ($name == 'Post i butikk - Postkontor') {
+	    		return 1000;
+	    	} else if ($name == 'Henting i butikk (MyPack)') {
+	    		return 2000;
+	    	} else return 3000;
+	    	
+	    	$crg->requestConsignment($crg_data,$debug,$crg_consignment_url,$this->crg_save_response_as_text);
+			$cost = $crg->getEstimatedCostFromXml();
+				
+			return $cost;
+	    }
+	    
+	    public function admin_options() {
+    		?>
+	    	<h3><?php _e('Aurelie shipping', 'woocommerce'); ?></h3>
+	    	<p><?php _e('The description', 'woocommerce'); ?></p>
+	    	<table class="form-table">
+	    	<?php
+	    		// Generate the HTML For the settings form.
+	    		$this->generate_settings_html();
+	    	?>
+			</table><!--/.form-table-->
+	    	<?php
+	    }
+	    
+	    private function get_selected_rate_name($shipping_method){
+	    	$rates = $this->get_rates();
+			foreach ($rates as $a){
+				if ($this->id . "__" . md5(trim($a['name'])) == $shipping_method){
+					return trim($a['name']);
+				}
+			}
+	    }
+	    
+	    private function get_alert_method($post){
+	    	$alert_info = array();
+	    	$method = $post['retrieve_method_' . $this->shipping_method_md5];
+	    	if (stristr($method, "_email_")){
+	    		$alert_info['value'] = $post["retrieve_method_email_value_" . $this->shipping_method_md5];
+	    		$alert_info['type'] = 'email';
+	    	} else if (stristr($method, "_sms_")){
+	    		$alert_info['value'] = $post["retrieve_method_sms_number_" . $this->shipping_method_md5];
+	    		$alert_info['type'] = 'sms';
+	    	}
+	    	return $alert_info;
+	    }
+	    
+	    private function set_customer_number(){
+	    	$current_user = wp_get_current_user();
+	    	if ($current_user){
+	    		$this->customer_number = $current_user->ID;
+	    	} else {
+	    		$this->customer_number = "000 - guest";
+	    	}
+	    }
+	    
+	    private function set_data_for_cargonizer($estimate = NULL){
+	    	global $woocommerce;
+			
+			$checkout = $woocommerce->checkout();
+			
+			$this->shipping_method_md5 		= $_POST['shipping_method'];
+			$this->shipping_method_name 	= $this->get_selected_rate_name($this->shipping_method_md5);
+			$this->alert_method 			= $this->get_alert_method($_POST);
+			
+			$this->shipping_country 		= $checkout->get_value('shipping_country');
+			$this->shipping_first_name 		= $checkout->get_value('shipping_first_name');
+			$this->shipping_last_name 		= $checkout->get_value('shipping_last_name');
+			$this->shipping_company 		= $checkout->get_value('shipping_company');
+			$this->shipping_address_1 		= $checkout->get_value('shipping_address_1');
+			$this->shipping_address_2 		= $checkout->get_value('shipping_address_2');
+			$this->shipping_postcode 		= $checkout->get_value('shipping_postcode');
+			$this->shipping_city 			= $checkout->get_value('shipping_city');
+			$this->shipping_state 			= $checkout->get_value('shipping_state');
+			$this->billing_phone 			= $checkout->get_value('billing_phone');
+			//var_dump($this->shipping_first_name);die();
+			if (isset($estimate) && $estimate){
+				/**
+				 * the request comes from convert_available_methods()
+				 */
+				if (isset($_POST['s_address']))
+					$this->shipping_address_1 = $_POST['s_address'];
+				if (isset($_POST['s_postcode']))
+					$this->shipping_postcode = $_POST['s_postcode'];
+				if (isset($_POST['s_city']))
+					$this->shipping_city  = $_POST['s_city'];
+			}
+			
+			$this->set_customer_number();
+			
+			switch ($this->alert_method['type']){
+				case "email":
+					$this->shipping_email = $this->alert_method['value'];
+					break;
+				case "sms": 
+					$this->shipping_mobile = $this->alert_method['value'];
+					break;
+			}
+			
+			if (sizeof($woocommerce->cart->get_cart())>0) :
+				$k = 0;
+				foreach ($woocommerce->cart->get_cart() as $cart_item_key => $values) :
+					$_product = $values['data'];
+					
+					$dimensions = $this->product_get_dimensions($_product->get_dimensions());
+					
+					$this->items[$k]['item']['_attribs']['amount'] = $values['quantity'];
+					$this->items[$k]['item']['_attribs']['weight'] = $_product->get_weight() * $values['quantity'];
+					$this->items[$k]['item']['_attribs']['length'] = $dimensions['length'];
+					$this->items[$k]['item']['_attribs']['width'] = $dimensions['width'];
+					$this->items[$k]['item']['_attribs']['height'] = $dimensions['height'];
+					$this->items[$k]['item']['_attribs']['description'] = $_product->get_title();
+					$this->items[$k]['item']['_attribs']['type'] = "PK";
+					$k++;
+					
+				endforeach;
+			endif;
+	    }
+	    
+	    public function extra_checkout($order_id = NULL){
+	    	if ( ! class_exists( 'cargonizer' ) ) {
+	    		require_once("include/cargonizer.php");
+	    	}
+
+	    	$this->set_data_for_cargonizer();
+	    	$this->order_id = $order_id;
+	    	
+	    	$crg = new cargonizer($this->crg_api_key, $this->crg_sender_id, $this->crg_consignment_url);
+	    	
+	    	switch ($this->shipping_method_name){
+	    		case "Henting i butikk (MyPack)":
+	    			$crg_transport_agreement = "1047";
+	    			$crg_product = "mypack";
+	    			$crg_service_partner= array("service_partner" => array(
+						"number" => "3042033",
+						"customer_number" => "AND001",
+						"name" => "ROMSDAL BLOMSTER OG GAVER",
+						"address1" => "RAUMASENTERET ØRAN",
+						"country" => "NO",
+						"postcode" => "6300",
+						"city" => "Åndalsnes"
+					));
+					$crg_services = array(
+						array("service" => array(
+							"_attribs" => array("id"=>"tg_etterkrav"),
+							"amount" => "4571",
+							"currency" => "NOK",
+							"kid" => "1000076353545222",
+						)),
+					);
+	    			break;
+	    		case "Post i butikk - Postkontor":
+	    			$crg_transport_agreement = "1047";
+	    			$crg_product = "tg_parti";
+	    			$crg_service_partner = NULL;
+	    			$crg_services = NULL;
+	    			break;
+	    		case "Bring":
+	    			$crg_transport_agreement = "1048";
+	    			$crg_product = "bring_servicepakke";
+	    			$crg_service_partner = NULL;
+	    			$crg_services = array(
+	    				/**
+	    				 * following service enables 'cash on delivery'
+	    				 */
+						/*array("service" => array(
+							"_attribs" => array("id"=>"bring_oppkrav"), // was bring_oppkrav
+							"amount" => "100",
+							"account_number" => "123456789",
+							"kid" => "123456789",
+						)),*/
+						array("service" => array(
+							"_attribs" => array("id" => "bring_e_varsle_for_utlevering")
+						))
+					);
+	    			break;
+	    	}
+
+	    	$this->crg_data['consignments'] = array(
+				"consignment" => array(
+					"_attribs" => array(
+						"transport_agreement" => $crg_transport_agreement, 
+						"estimate" => "true",
+					),
+					"values" => array(
+						"value" => array(
+							"_attribs" => array(
+								"name" => "ordre_id",
+								"value" => $this->order_id,
+							),
+						),
+					),
+					"collection" => array(
+						"name" => "Dagens",
+						"transfer_date" => date("Y-m-d\TH:i:s",strtotime("+2 hour")), //Automatically transfers EDI after 2 hours
+					),
+					"product" => $crg_product, 
+					"parts" => array(
+						"consignee" => array(
+							"customer-number" => $this->customer_number,
+							"name" => $this->shipping_first_name . " " . $this->shipping_last_name,
+							"address1" => $this->shipping_address_1,
+							"address2" => $this->shipping_address_2,
+							"country" => $this->shipping_country,
+							"postcode" => $this->shipping_postcode,
+							"city" => $this->shipping_city,
+							"phone" => $this->billing_phone,
+							"email" => $this->shipping_email,
+							"mobile" => $this->shipping_mobile
+						),
+						$crg_service_partner
+					),
+					"items" => $this->items, 
+					"services" => $crg_services,
+					"references" => array(
+						"consignor" => $this->order_id,
+						"consignee" => "Ordre.nr: " . $this->order_id,
+					),
+					"messages" => array(
+						"carrier" => "test_message_carrier",
+						"consignee" => "test_message_consignee",
+					),
+				),
+			);
+	    	//echo "<pre>".print_r($this->crg_data['consignments'], 1); echo "</pre>"; //die();
+	    	
+			///** remove the comment
+			$crg->requestConsignment($this->crg_data, $this->crg_debug, $this->crg_consignment_url,$this->crg_save_response_as_text);
+			$this->crg_package_number = $crg->getPkgNumber();
+			//*/
+			
+			/** remove the comment
+			$result_xml = $crg->getResultXml();
+			*/
+			//echo "<pre>".print_r($result_xml,1)."</pre>";
+			
+			/**
+			 * this is to save the retrieved package number in order's custom fields - visible in admin
+			 */
+			update_post_meta( $this->order_id, __('Package Number', 'aurelie_shipping'), $this->crg_package_number);
+			
+			//die(' from aurelie shipping plugin i should be removed');
+	    }
+	    
+	    public function convert_available_methods($available_methods){
+	    	if ( ! class_exists( 'cargonizer' ) ) {
+	    		require_once("include/cargonizer.php");
+	    	}
+	    	global $woocommerce;
+	    	$crg = new cargonizer($this->crg_api_key, $this->crg_sender_id, $this->crg_transport_cost_url);
+	    	$this->set_data_for_cargonizer(TRUE);
+	    	$this->order_id = 'estimate';
+
+		    foreach ($available_methods as $key=>$value){
+		    	if ($key == 'aurelie_shipping__' . md5('Henting i butikk (MyPack)')){
+		    		$crg_transport_agreement = "1047";
+	    			$crg_product = "mypack";
+	    			$crg_service_partner= array("service_partner" => array(
+						"number" => "3042033",
+						"customer_number" => "AND001",
+						"name" => "ROMSDAL BLOMSTER OG GAVER",
+						"address1" => "RAUMASENTERET ØRAN",
+						"country" => "NO",
+						"postcode" => "6300",
+						"city" => "Åndalsnes"
+					));
+					$crg_services = array(
+						array("service" => array(
+							"_attribs" => array("id"=>"tg_etterkrav"),
+							"amount" => "4571",
+							"currency" => "NOK",
+							"kid" => "1000076353545222",
+						)),
+					);
+				}
+				else if ($key == 'aurelie_shipping__' . md5('Post i butikk - Postkontor')){
+					$crg_transport_agreement = "1047";
+	    			$crg_product = "tg_parti";
+	    			$crg_service_partner = NULL;
+	    			$crg_services = NULL;
+				} 
+				else if ($key == 'aurelie_shipping__' . md5('Bring')){
+					$crg_transport_agreement = "1048";
+	    			$crg_product = "bring_servicepakke";
+	    			$crg_service_partner = NULL;
+	    			$crg_services = array(
+						array("service" => array(
+							"_attribs" => array("id"=>"bring_oppkrav"), // was bring_oppkrav
+							"amount" => "100",
+							"account_number" => "123456789",
+							"kid" => "123456789",
+						))
+					);
+				}
+				
+				$this->crg_data['consignments'] = array(
+					"consignment" => array(
+						"_attribs" => array(
+							"transport_agreement" => $crg_transport_agreement, 
+							"estimate" => "true",
+						),
+						"values" => array(
+							"value" => array(
+								"_attribs" => array(
+									"name" => "ordre_id",
+									"value" => $this->order_id,
+								),
+							),
+						),
+						"collection" => array(
+							"name" => "Dagens",
+							"transfer_date" => date("Y-m-d\TH:i:s",strtotime("+2 hour")), //Automatically transfers EDI after 2 hours
+						),
+						"product" => $crg_product, 
+						"parts" => array(
+							"consignee" => array(
+								"customer-number" => $this->customer_number,
+								"name" => $this->shipping_first_name . " " . $this->shipping_last_name,
+								"address1" => $this->shipping_address_1,
+								"address2" => $this->shipping_address_2,
+								"country" => $this->shipping_country,
+								"postcode" => $this->shipping_postcode,
+								"city" => $this->shipping_city,
+								"phone" => $this->billing_phone,
+								"email" => $this->shipping_email,
+								"mobile" => $this->shipping_mobile
+							),
+							$crg_service_partner
+						),
+						"items" => $this->items, 
+						"services" => $crg_services,
+						"references" => array(
+							"consignor" => $this->order_id,
+							"consignee" => "Ordre.nr: " . $this->order_id,
+						),
+						"messages" => array(
+							"carrier" => "test_message_carrier",
+							"consignee" => "test_message_consignee",
+						),
+					),
+				);
+				
+				$crg->requestConsignment($this->crg_data, $this->debug, $this->crg_transport_cost_url,$this->crg_save_response_as_text);
+				
+				$error = $crg->check_xml_response();
+				
+				if (!$error) {
+					$available_methods[$key]->cost = $crg->getEstimatedCostFromXml();
+					$available_methods[$key]->error = FALSE;
+				}
+				else {
+					$available_methods[$key]->error = TRUE;
+				}
+				
+				$result_xml = $crg->getResultXml();
+	
+			}
+			return $available_methods;
+	    }
+    }
+}
+
+/**
+ * Add shipping method to WooCommerce
+ **/
+function add_aurelie_shipping( $methods ) {
+	$methods[] = 'aurelie_shipping'; return $methods;
+}
+
+add_filter( 'woocommerce_shipping_methods', 'add_aurelie_shipping' );
+
+function woocommerce_ajax_update_order_levering(){
+	global $woocommerce;
+
+	check_ajax_referer( 'update-order-levering', 'security' ); // update-order-levering is defined in update_order_levering_nonce on woocommerce.php
+
+	if ( ! defined( 'WOOCOMMERCE_CHECKOUT' ) )
+		define( 'WOOCOMMERCE_CHECKOUT', true );
+		
+	if ( sizeof( $woocommerce->cart->get_cart() ) == 0 ) {
+		echo '<div class="woocommerce-error">' . __( 'Sorry, your session has expired.', 'woocommerce' ) . ' <a href="' . home_url() . '">' . __( 'Return to homepage &rarr;', 'woocommerce' ) . '</a></div>';
+		die();
+	}
+
+	$woocommerce->session->chosen_shipping_method = empty( $_POST['shipping_method'] ) ? '' : $_POST['shipping_method'];
+	$woocommerce->session->chosen_payment_method  = empty( $_POST['payment_method'] ) ? '' : $_POST['payment_method'];
+
+	if ( isset( $_POST['country'] ) )
+		$woocommerce->customer->set_country( $_POST['country'] );
+
+	if ( isset( $_POST['state'] ) )
+		$woocommerce->customer->set_state( $_POST['state'] );
+
+	if ( isset( $_POST['postcode'] ) )
+		$woocommerce->customer->set_postcode( $_POST['postcode'] );
+
+	if ( isset( $_POST['city'] ) )
+		$woocommerce->customer->set_city( $_POST['city'] );
+
+	if ( isset( $_POST['address'] ) )
+		$woocommerce->customer->set_address( $_POST['address'] );
+
+	if ( isset( $_POST['address_2'] ) )
+		$woocommerce->customer->set_address_2( $_POST['address_2'] );
+
+	if ( isset( $_POST['s_country'] ) )
+		$woocommerce->customer->set_shipping_country( $_POST['s_country'] );
+
+	if ( isset( $_POST['s_state'] ) )
+		$woocommerce->customer->set_shipping_state( $_POST['s_state'] );
+
+	if ( isset( $_POST['s_postcode'] ) )
+		$woocommerce->customer->set_shipping_postcode( $_POST['s_postcode'] );
+
+	if ( isset( $_POST['s_city'] ) )
+		$woocommerce->customer->set_shipping_city( $_POST['s_city'] );
+
+	if ( isset( $_POST['s_address'] ) )
+		$woocommerce->customer->set_shipping_address( $_POST['s_address'] );
+
+	if ( isset( $_POST['s_address_2'] ) )
+		$woocommerce->customer->set_shipping_address_2( $_POST['s_address_2'] );
+
+	$woocommerce->cart->calculate_totals();
+
+	do_action( 'woocommerce_checkout_order_levering' ); // Display review order table
+
+	die();
+	
+}
+
+add_action('wp_ajax_woocommerce_update_order_levering', 'woocommerce_ajax_update_order_levering');
+add_action('wp_ajax_nopriv_woocommerce_update_order_levering', 'woocommerce_ajax_update_order_levering');
+
+
+
+function daniel_extra_checkout(){
+	global $woocommerce;
+	
+	$checkout = $woocommerce->checkout();
+	
+	$shipping_country = $checkout->get_value('shipping_country');
+	$shipping_first_name = $checkout->get_value('shipping_first_name');
+	$shipping_last_name = $checkout->get_value('shipping_last_name');
+	$shipping_company = $checkout->get_value('shipping_company');
+	$shipping_address_1 = $checkout->get_value('shipping_address_1');
+	$shipping_address_2 = $checkout->get_value('shipping_address_2');
+	$shipping_postcode = $checkout->get_value('shipping_postcode');
+	$shipping_city = $checkout->get_value('shipping_city');
+	$shipping_state = $checkout->get_value('shipping_state');
+	
+	$items = array();
+
+	if (sizeof($woocommerce->cart->get_cart())>0) :
+		$k = 0;
+		foreach ($woocommerce->cart->get_cart() as $cart_item_key => $values) :
+			$_product = $values['data'];
+			
+			$dimensions = $this->product_get_dimensions($_product->get_dimensions());
+			
+			$items[$k]['item']['_attribs']['amount'] = $values['quantity'];
+			$items[$k]['item']['_attribs']['weight'] = $_product->get_weight();
+			$items[$k]['item']['_attribs']['length'] = $dimensions['length'];
+			$items[$k]['item']['_attribs']['width'] = $dimensions['width'];
+			$items[$k]['item']['_attribs']['height'] = $dimensions['height'];
+			$items[$k]['item']['_attribs']['description'] = $_product->get_title();
+			$items[$k]['item']['_attribs']['type'] = "PK";
+			$k++;
+			
+		endforeach;
+	endif;
+
+	
+	include( 'my_cargonizer.php' );
+	
+	die('here on extra_checkout');
+}

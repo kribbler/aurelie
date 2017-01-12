@@ -1,0 +1,265 @@
+@CHARSET "ISO-8859-1";
+
+.red{
+	color:red;
+}
+
+table#products_list {
+	border-right:0;
+	clear: both;
+	color: #333;
+	margin-bottom: 10px;
+	width: 100%;
+}
+#products_list th {
+	border:0;
+	border-bottom:2px solid #555;
+	text-align: left;
+	padding:4px;
+}
+#products_list th a {
+	display: block;
+	padding: 2px 4px;
+	text-decoration: none;
+}
+#products_list th a.asc:after {
+	content: ' ⇣';
+}
+#products_list th a.desc:after {
+	content: ' ⇡';
+}
+table#products_list tr td {
+	padding: 6px;
+	text-align: left;
+	vertical-align: top;
+	border-bottom:1px solid #ddd;
+}
+table#products_list tr:nth-child(even) {
+	background: #f9f9f9;
+}
+#products_list td.actions {
+	text-align: center;
+	white-space: nowrap;
+}
+table#products_list td.actions a {
+	margin: 0px 6px;
+	padding:2px 5px;
+}
+
+#products_list td{
+	padding:5px;
+}
+
+.delete_products{
+	cursor:pointer;
+	background-color: #21759B;
+    background-image: linear-gradient(to bottom, #2A95C5, #21759B);
+    border-color: #21759B #21759B #1E6A8D;
+    box-shadow: 0 1px 0 rgba(120, 200, 230, 0.5) inset;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+    padding:3px;
+}
+
+	#dhtmlgoodies_dragDropContainer{	/* Main container for this script */
+		/*width:790px;
+		height:720px;
+		border:1px solid #317082;
+		background-color:#FFF;
+		-moz-user-select:none;*/
+	}
+	#dhtmlgoodies_dragDropContainer ul, .group_container ul{	/* General rules for all <ul> */
+		margin-top:0px;
+		margin-left:0px;
+		margin-bottom:0px;
+		padding:2px;
+	}
+
+	#dhtmlgoodies_dragDropContainer li,#dragContent li,li#indicateDestination, .group_container li{	/* Movable items, i.e. <LI> */
+		list-style-type:none;
+		height:20px;
+		background-color:#EEE;
+		border:1px solid #000;
+		padding:2px;
+		margin-bottom:2px;
+		cursor:pointer;
+		font-size:0.9em;
+	}
+
+	li#indicateDestination{	/* Box indicating where content will be dropped - i.e. the one you use if you don't use arrow */
+		border:1px dotted #600;
+		background-color:#FFF;
+	}
+
+
+	/* LEFT COLUMN CSS */
+	div#dhtmlgoodies_listOfItems, .group_container{	/* Left column "Available students" */
+
+		float:left;
+		padding-left:0px;
+		padding-right:10px;
+
+		/* CSS HACK */
+		width: 180px;	/* IE 5.x */
+		width/* */:/**/160px;	/* Other browsers */
+		width: /**/160px;
+
+	}
+	#dhtmlgoodies_listOfItems ul, .group_container ul{	/* Left(Sources) column <ul> */
+		height:530px;
+
+	}
+
+	div#dhtmlgoodies_listOfItems div, .group_container div{
+		border:1px solid #999;
+	}
+	div#dhtmlgoodies_listOfItems div ul, div.group_container div ul{	/* Left column <ul> */
+		margin:10px;	/* Space at the left of list - the arrow will be positioned there */
+	}
+	#dhtmlgoodies_listOfItems div p, .group_container div p{	/* Heading above left column */
+		margin:0px;
+		font-weight:bold;
+		padding-left:12px;
+		background-color:#317082;
+		color:#FFF;
+		margin-bottom:5px;
+	}
+	/* END LEFT COLUMN CSS */
+
+	#dhtmlgoodies_dragDropContainer .mouseover{	/* Mouse over effect DIV box in right column */
+		background-color:#E2EBED;
+		border:1px solid #317082;
+	}
+
+	/* Start main container CSS */
+
+	div#dhtmlgoodies_mainContainer{	/* Right column DIV */
+		/*width:590px;*/
+		float:left;
+	}
+	#dhtmlgoodies_mainContainer div{	/* Parent <div> of small boxes */
+		float:left;
+		margin-right:10px;
+		margin-bottom:10px;
+		margin-top:0px;
+		border:1px solid #999;
+
+		/* CSS HACK */
+		width: 172px;	/* IE 5.x */
+		width/* */:/**/170px;	/* Other browsers */
+		width: /**/170px;
+
+	}
+	#dhtmlgoodies_mainContainer div ul{
+		margin:10px;
+	}
+
+	#dhtmlgoodies_mainContainer div p{	/* Heading above small boxes */
+		margin:0px;
+		padding:0px;
+		padding-left:12px;
+		font-weight:bold;
+		background-color:#317082;
+		color:#FFF;
+		margin-bottom:5px;
+	}
+
+	#dhtmlgoodies_mainContainer ul{	/* Small box in right column ,i.e <ul> */
+		width:152px;
+		height:80px;
+		border:0px;
+		margin-bottom:0px;
+		overflow:hidden;
+
+	}
+
+	#dragContent{	/* Drag container */
+		position:absolute;
+		width:150px;
+		height:20px;
+		display:none;
+		margin:0px;
+		padding:0px;
+		z-index:2000;
+	}
+
+	#dragDropIndicator{	/* DIV for the small arrow */
+		position:absolute;
+		width:7px;
+		height:10px;
+		display:none;
+		z-index:1000;
+		margin:0px;
+		padding:0px;
+	}
+	
+	label, #group_name, #on_list, #on_page{
+		margin-left:10px;
+	}
+	#drag_footer{
+		height:30px;
+		vertical-align:middle;
+		text-align:left;
+		clear:both;
+		padding-right:3px;
+		margin-top:20px;
+	}
+	#drag_footer form{
+		margin:0px;
+		margin-top:2px;
+	}
+	
+	ul#groups{
+		height:auto;
+	}
+	ul#groups li {
+		height: auto;
+	}
+	
+	.green{
+		color:green;
+	}
+	
+.button-pending, .button-trash, .button-delete, #stop_call, #pause_call,
+.button-pending-bulk, .button-trash-bulk, .button-delete-bulk {
+display:inline-block;
+text-decoration:none;
+font-size:12px;
+line-height:23px;
+height:24px;
+cursor:pointer;
+-webkit-border-radius:3px;
+-webkit-appearance:none;
+border-radius:3px;
+white-space:nowrap;
+-webkit-box-sizing:border-box;
+-moz-box-sizing:border-box;
+box-sizing:border-box;
+border-style:solid;
+border-width:1px;
+margin:0 3px 0 0;
+padding:0 10px 1px;
+background-color:#3B93AA;
+background-image:linear-gradient(tobottom,#2a95c5,#21759b);
+-webkit-box-shadow:inset 0 1px 0 rgba(120,200,230,0.5);
+box-shadow:inset 0 1px 0 rgba(120,200,230,0.5);
+color:#fff;
+text-decoration:none;
+text-shadow:0 1px 0 rgba(0,0,0,0.1);
+border-color:#21759b #21759b #1e6a8d;
+}
+
+.button-pending:hover, .button-delete:hover, .button-trash:hover, #stop_call:hover, #pause_call:hover {
+background-color:#278ab7;
+background-image:linear-gradient(tobottom,#2e9fd2,#21759b);
+-webkit-box-shadow:inset 0 1px 0 rgba(120,200,230,0.6);
+box-shadow:inset 0 1px 0 rgba(120,200,230,0.6);
+color:#fff;
+text-shadow:0 -1px 0 rgba(0,0,0,0.3);
+border-color:#1b607f;
+}
+
+#products_counter, #products_counter2{
+	color:red;
+}

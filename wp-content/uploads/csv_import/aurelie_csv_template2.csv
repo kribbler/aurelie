@@ -1,0 +1,3 @@
+Name;SKU;Price;Short Description;Description;Categories;Image;Length;Width;Height;Stock;Tags;pa_product-link;pa_original-sku
+Testprod;123458;233;liten beskrivelse;litt mer å skrive om. Bla bla bla;Armbånd;bilde1.jpg|bilde2.jpg;4;6;88;4;sølv, gull, diamant, armbånd;http://www.vg.no/testlenke;987987987
+Testprod 1;123458;444;liten beskrivelse;litt mer å skrive om. Bla bla bla;Armbånd;bilde1.jpg|bilde2.jpg;3;55;88;4;sølv, gull, diamant, armbånd;http://www.vg.no/testlenke;987987987

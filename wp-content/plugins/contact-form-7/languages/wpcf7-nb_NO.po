@@ -1,0 +1,1336 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Contact Form 7 v3.4.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-09-22 16:34+0900\n"
+"PO-Revision-Date: 2013-06-21 18:09:26+0000\n"
+"Last-Translator: Peter Holme <peter@holme.se>\n"
+"Language-Team: Marius Olsen <marius.olsen@aanvik.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: Norwegian Bokmal\n"
+"X-Poedit-Country: NORWAY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Textdomain-Support: yes"
+
+#: includes/functions.php:80
+#: includes/functions.php:82
+#@ wpcf7
+msgid "(required)"
+msgstr "(obligatorisk)"
+
+#: admin/admin.php:300
+#@ wpcf7
+msgid "(select language)"
+msgstr "(velg språk)"
+
+#: modules/checkbox.php:199
+#: modules/select.php:162
+#@ wpcf7
+msgid "* One choice per line."
+msgstr "* Ett valg per linje."
+
+#: modules/acceptance.php:163
+#@ wpcf7
+msgid "* That means visitor who accepts the term unchecks it."
+msgstr "* Merke m&aring; fjernes for godkjenning av vilk&aring;r."
+
+#: modules/quiz.php:186
+#@ wpcf7
+msgid "* quiz|answer (e.g. 1+1=?|2)"
+msgstr "* sp&oslash;rsm&aring;l|svar (f.eks. 1+1=?|2)"
+
+#: modules/file.php:254
+#@ wpcf7
+msgid "Acceptable file types"
+msgstr "Tillatte filtyper"
+
+#: modules/acceptance.php:138
+#@ wpcf7
+msgid "Acceptance"
+msgstr "Vilk&aring;r"
+
+#: admin/admin.php:260
+#: admin/admin.php:292
+#: admin/admin.php:305
+#: admin/edit-contact-form.php:15
+#@ wpcf7
+msgid "Add New"
+msgstr "Legg til ny"
+
+#: admin/admin.php:328
+#@ wpcf7
+msgid "Additional Settings"
+msgstr "Flere innstillinger"
+
+#: admin/includes/meta-boxes.php:61
+#@ wpcf7
+msgid "Additional headers:"
+msgstr "Flere tekstfelt:"
+
+#: includes/functions.php:149
+#@ wpcf7
+msgid "Afrikaans"
+msgstr "Afrikaans"
+
+#: modules/text.php:250
+#@ wpcf7
+msgid "Akismet"
+msgstr "Akismet"
+
+#: includes/functions.php:150
+#@ wpcf7
+msgid "Albanian"
+msgstr "Albansk"
+
+#: modules/select.php:166
+#@ wpcf7
+msgid "Allow multiple selections?"
+msgstr "Tillat flere valg"
+
+#: modules/file.php:261
+#@ wpcf7
+msgid "And, put this code into the File Attachments field below."
+msgstr "Plasser denne koden i Filvedlegg feltet nedenfor."
+
+#: modules/checkbox.php:214
+#: modules/date.php:195
+#: modules/number.php:205
+#: modules/select.php:174
+#: modules/text.php:273
+#: modules/textarea.php:146
+#@ wpcf7
+msgid "And, put this code into the Mail fields below."
+msgstr "Kopier denne koden og lim inn i skjemaet nedenfor."
+
+#: includes/functions.php:151
+#@ wpcf7
+msgid "Arabic"
+msgstr "Arabisk"
+
+#: modules/captcha.php:222
+#@ wpcf7
+msgid "Background color"
+msgstr "Bakgrunnsfarge"
+
+#: includes/functions.php:154
+#@ wpcf7
+msgid "Bangla"
+msgstr "Bengali"
+
+#: includes/functions.php:157
+#@ wpcf7
+msgid "Bosnian"
+msgstr "Bosnisk"
+
+#: includes/functions.php:158
+#@ wpcf7
+msgid "Brazilian Portuguese"
+msgstr "Brasiliansk portugisisk"
+
+#: includes/functions.php:159
+#@ wpcf7
+msgid "Bulgarian"
+msgstr "Bulgarsk"
+
+#: modules/captcha.php:190
+#@ wpcf7
+msgid "CAPTCHA"
+msgstr "CAPTCHA"
+
+#: includes/functions.php:160
+#@ wpcf7
+msgid "Catalan"
+msgstr "Katalansk"
+
+#: modules/checkbox.php:157
+#@ wpcf7
+msgid "Checkboxes"
+msgstr "Avkryssingsboks"
+
+#: includes/functions.php:161
+#@ wpcf7
+msgid "Chinese (Simplified)"
+msgstr "Kinesisk (forenklet)"
+
+#: includes/functions.php:162
+#@ wpcf7
+msgid "Chinese (Traditional)"
+msgstr "Kinesisk (tradisjonell)"
+
+#: modules/checkbox.php:197
+#: modules/select.php:160
+#@ wpcf7
+msgid "Choices"
+msgstr "Valg"
+
+#: admin/admin.php:8
+#@ wpcf7
+msgid "Contact"
+msgstr "Kontakt"
+
+#. translators: plugin header field 'Name'
+#: admin/admin.php:8
+#: admin/admin.php:258
+#: admin/edit-contact-form.php:12
+#: modules/flamingo.php:14
+#: wp-contact-form-7.php:0
+#@ wpcf7
+msgid "Contact Form 7"
+msgstr "Kontaktskjema 7"
+
+#: admin/admin.php:427
+#@ wpcf7
+msgid "Contact Form 7 needs your support. Please donate today."
+msgstr "Kontaktskjema 7 trenger din st&oslash;tte. Bidra i dag."
+
+#: admin/admin.php:359
+#@ wpcf7
+msgid "Contact form created."
+msgstr "Kontaktskjema opprettet."
+
+#: admin/admin.php:363
+#@ wpcf7
+msgid "Contact form deleted."
+msgstr "Kontaktskjema slettet."
+
+#: admin/admin.php:361
+#@ wpcf7
+msgid "Contact form saved."
+msgstr "Kontaktskjema lagret."
+
+#: admin/edit-contact-form.php:67
+#: admin/includes/class-contact-forms-list-table.php:112
+#@ wpcf7
+msgid "Copy"
+msgstr "Kopier"
+
+#: modules/acceptance.php:168
+#: modules/captcha.php:253
+#: modules/checkbox.php:212
+#: modules/date.php:193
+#: modules/file.php:259
+#: modules/number.php:203
+#: modules/quiz.php:191
+#: modules/select.php:172
+#: modules/submit.php:74
+#: modules/text.php:271
+#: modules/textarea.php:144
+#@ wpcf7
+msgid "Copy this code and paste it into the form left."
+msgstr "Kopier denne koden og lim inn i skjemaet til venstre."
+
+#: admin/edit-contact-form.php:46
+#@ wpcf7
+msgid "Copy this code and paste it into your post, page or text widget content."
+msgstr "Kopier denne koden og lim inn i innlegg, p&aring; side eller i tekstwidget."
+
+#: includes/functions.php:163
+#@ wpcf7
+msgid "Croatian"
+msgstr "Kroatisk"
+
+#: includes/functions.php:164
+#@ wpcf7
+msgid "Czech"
+msgstr "Tsjekkisk"
+
+#: includes/functions.php:165
+#@ wpcf7
+msgid "Danish"
+msgstr "Dansk"
+
+#: modules/date.php:185
+#: modules/number.php:195
+#: modules/text.php:263
+#: modules/textarea.php:136
+#@ wpcf7
+msgid "Default value"
+msgstr "Standard verdi"
+
+#: admin/edit-contact-form.php:72
+#: admin/includes/class-contact-forms-list-table.php:83
+#@ wpcf7
+msgid "Delete"
+msgstr "Slett"
+
+#: admin/admin.php:392
+#@ wpcf7
+msgid "Docs"
+msgstr "Dokumentasjon"
+
+#: admin/admin.php:434
+#@ wpcf7
+msgid "Donate"
+msgstr "Don&eacute;r"
+
+#: modules/select.php:137
+#@ wpcf7
+msgid "Drop-down menu"
+msgstr "Meny"
+
+#: includes/functions.php:166
+#@ wpcf7
+msgid "Dutch"
+msgstr "Nederlandsk"
+
+#: admin/admin.php:13
+#: admin/includes/class-contact-forms-list-table.php:104
+#@ wpcf7
+msgid "Edit"
+msgstr "Rediger"
+
+#: admin/admin.php:13
+#@ wpcf7
+msgid "Edit Contact Forms"
+msgstr "Rediger kontaktskjema"
+
+#: modules/text.php:167
+#@ wpcf7
+msgid "Email address seems invalid."
+msgstr "Epost-adressen fremst&aring;r som ugyldig."
+
+#: includes/functions.php:167
+#@ wpcf7
+msgid "English"
+msgstr "Engelsk"
+
+#: includes/functions.php:169
+#@ wpcf7
+msgid "Estonian"
+msgstr "Estisk"
+
+#: admin/admin.php:394
+#@ wpcf7
+msgid "FAQ"
+msgstr "FAQ"
+
+#: modules/file.php:199
+#@ wpcf7
+msgid "Failed to upload file."
+msgstr "Kunne ikke laste opp fil."
+
+#: modules/file.php:214
+#@ wpcf7
+msgid "Failed to upload file. Error occurred."
+msgstr "Opplasting av fil mislyktes. En feil oppstod."
+
+#: admin/includes/meta-boxes.php:66
+#@ wpcf7
+msgid "File attachments:"
+msgstr "Vedlagte filer:"
+
+#: modules/file.php:251
+#@ wpcf7
+msgid "File size limit"
+msgstr "Maks. filst&oslash;rrelse"
+
+#: modules/file.php:228
+#@ wpcf7
+msgid "File upload"
+msgstr "Filopplasting"
+
+#: includes/functions.php:170
+#@ wpcf7
+msgid "Finnish"
+msgstr "Finsk"
+
+#: modules/captcha.php:254
+#@ wpcf7
+msgid "For image"
+msgstr "For bilde"
+
+#: modules/captcha.php:256
+#@ wpcf7
+msgid "For input field"
+msgstr "For skjemafelt"
+
+#: modules/captcha.php:219
+#@ wpcf7
+msgid "Foreground color"
+msgstr "Tekstfarge"
+
+#: admin/admin.php:312
+#@ wpcf7
+msgid "Form"
+msgstr "Skjema"
+
+#: includes/functions.php:171
+#@ wpcf7
+msgid "French"
+msgstr "Fransk"
+
+#: admin/includes/meta-boxes.php:49
+#@ wpcf7
+msgid "From:"
+msgstr "Fra:"
+
+#: includes/functions.php:96
+#, php-format
+#@ wpcf7
+msgid "From: %s"
+msgstr "Fra: %s"
+
+#: includes/functions.php:172
+#@ wpcf7
+msgid "Galician"
+msgstr "Galisisk"
+
+#: admin/admin.php:233
+#@ wpcf7
+msgid "Generate Tag"
+msgstr "Opprett"
+
+#: includes/functions.php:173
+#@ wpcf7
+msgid "Georgian"
+msgstr "Georgisk"
+
+#: includes/functions.php:174
+#@ wpcf7
+msgid "German"
+msgstr "Tysk"
+
+#: includes/functions.php:175
+#@ wpcf7
+msgid "Greek"
+msgstr "Gresk"
+
+#: includes/functions.php:176
+#@ wpcf7
+msgid "Hebrew"
+msgstr "Hebraisk"
+
+#: includes/functions.php:177
+#@ wpcf7
+msgid "Hindi"
+msgstr "Hindi"
+
+#: includes/functions.php:178
+#@ wpcf7
+msgid "Hungarian"
+msgstr "Ungarsk"
+
+#: modules/captcha.php:208
+#@ wpcf7
+msgid "Image settings"
+msgstr "Bildeinnstillinger"
+
+#: modules/captcha.php:226
+#@ wpcf7
+msgid "Image size"
+msgstr "Bildest&oslash;rrelse"
+
+#: includes/functions.php:179
+#@ wpcf7
+msgid "Indonesian"
+msgstr "Indonesisk"
+
+#: modules/captcha.php:234
+#@ wpcf7
+msgid "Input field settings"
+msgstr "Innstillinger for skjemafelt"
+
+#: modules/select.php:167
+#@ wpcf7
+msgid "Insert a blank item as the first option?"
+msgstr "Sett inn tom linje f&oslash;rst"
+
+#: includes/functions.php:181
+#@ wpcf7
+msgid "Italian"
+msgstr "Italiensk"
+
+#: includes/functions.php:182
+#@ wpcf7
+msgid "Japanese"
+msgstr "Japansk"
+
+#: includes/functions.php:183
+#@ wpcf7
+msgid "Korean"
+msgstr "Koreansk"
+
+#: modules/submit.php:67
+#@ wpcf7
+msgid "Label"
+msgstr "Etikett"
+
+#: modules/captcha.php:229
+#@ wpcf7
+msgid "Large"
+msgstr "Stor"
+
+#: includes/functions.php:184
+#@ wpcf7
+msgid "Latvian"
+msgstr "Latvisk"
+
+#: includes/functions.php:185
+#@ wpcf7
+msgid "Lithuanian"
+msgstr "Litauisk"
+
+#: admin/admin.php:315
+#@ wpcf7
+msgid "Mail"
+msgstr "E-post"
+
+#: admin/admin.php:318
+#@ wpcf7
+msgid "Mail (2)"
+msgstr "E-post (2)"
+
+#: modules/checkbox.php:206
+#@ wpcf7
+msgid "Make checkboxes exclusive?"
+msgstr "Gj&oslash;r avkrysningsboksene eksklusive?"
+
+#: modules/acceptance.php:161
+#@ wpcf7
+msgid "Make this checkbox checked by default?"
+msgstr "Avkrysset som standard"
+
+#: modules/acceptance.php:162
+#@ wpcf7
+msgid "Make this checkbox work inversely?"
+msgstr "Inverter funksjon"
+
+#: includes/functions.php:188
+#@ wpcf7
+msgid "Malayalam"
+msgstr "Malayalam"
+
+#: modules/captcha.php:228
+#@ wpcf7
+msgid "Medium"
+msgstr "Medium"
+
+#: includes/functions.php:98
+#: includes/functions.php:112
+#@ wpcf7
+msgid "Message Body:"
+msgstr "Meldingstekst:"
+
+#: admin/includes/meta-boxes.php:80
+#@ wpcf7
+msgid "Message body:"
+msgstr "Meldingstekst:"
+
+#: admin/admin.php:325
+#@ wpcf7
+msgid "Messages"
+msgstr "Meldinger"
+
+#: modules/acceptance.php:147
+#: modules/captcha.php:204
+#: modules/checkbox.php:184
+#: modules/date.php:159
+#: modules/file.php:238
+#: modules/number.php:169
+#: modules/quiz.php:163
+#: modules/select.php:147
+#: modules/text.php:228
+#: modules/textarea.php:110
+#@ wpcf7
+msgid "Name"
+msgstr "Navn"
+
+#: includes/functions.php:190
+#@ wpcf7
+msgid "Norwegian"
+msgstr "Norsk"
+
+#: modules/captcha.php:201
+#@ wpcf7
+msgid "Note: To use CAPTCHA, you need Really Simple CAPTCHA plugin installed."
+msgstr "Merk: For &aring; bruke CAPTCHA m&aring; du ha innstikket &ldquo;Really Simple CAPTCHA&rdquo; installert."
+
+#: admin/admin.php:295
+#@ wpcf7
+msgid "Or"
+msgstr "eller"
+
+#: includes/functions.php:191
+#@ wpcf7
+msgid "Persian"
+msgstr "Farsi"
+
+#: includes/functions.php:51
+#@ wpcf7
+msgid "Please accept the terms to proceed."
+msgstr "Du m&aring; akseptere vilk&aring;rene for &aring; fortsette."
+
+#: includes/functions.php:56
+#@ wpcf7
+msgid "Please fill the required field."
+msgstr "Feltet m&aring; fylles ut."
+
+#: includes/functions.php:192
+#@ wpcf7
+msgid "Polish"
+msgstr "Polsk"
+
+#: includes/functions.php:193
+#@ wpcf7
+msgid "Portuguese"
+msgstr "Portugisisk"
+
+#: modules/checkbox.php:203
+#@ wpcf7
+msgid "Put a label first, a checkbox last?"
+msgstr "Plasser etikett f&oslash;rst, avkrysningsboks sist?"
+
+#: modules/quiz.php:154
+#@ wpcf7
+msgid "Quiz"
+msgstr "Kontrollsp&oslash;rsm&aring;l"
+
+#: modules/quiz.php:184
+#@ wpcf7
+msgid "Quizzes"
+msgstr "Sp&oslash;rsm&aring;l"
+
+#: modules/checkbox.php:160
+#@ wpcf7
+msgid "Radio buttons"
+msgstr "Valgboks"
+
+#: modules/checkbox.php:181
+#: modules/date.php:158
+#: modules/file.php:237
+#: modules/number.php:168
+#: modules/select.php:146
+#: modules/text.php:227
+#: modules/textarea.php:109
+#@ wpcf7
+msgid "Required field?"
+msgstr "Obligatorisk felt"
+
+#: includes/functions.php:195
+#@ wpcf7
+msgid "Romanian"
+msgstr "Rumensk"
+
+#: includes/functions.php:194
+#@ wpcf7
+msgid "Russian"
+msgstr "Russisk"
+
+#: admin/edit-contact-form.php:60
+#@ wpcf7
+msgid "Save"
+msgstr "Lagre"
+
+#: includes/functions.php:88
+#: modules/submit.php:28
+#@ wpcf7
+msgid "Send"
+msgstr "Send"
+
+#: modules/quiz.php:140
+#@ wpcf7
+msgid "Sender doesn't enter the correct answer to the quiz"
+msgstr "Avsender svarer feil"
+
+#: includes/functions.php:35
+#@ wpcf7
+msgid "Sender's message was failed to send"
+msgstr "Avsenders melding ble ikke sendt"
+
+#: includes/functions.php:30
+#@ wpcf7
+msgid "Sender's message was sent successfully"
+msgstr "Avsenders melding ble sendt"
+
+#: includes/controller.php:243
+#@ wpcf7
+msgid "Sending ..."
+msgstr "Sender ..."
+
+#: includes/functions.php:196
+#@ wpcf7
+msgid "Serbian"
+msgstr "Serbisk"
+
+#: admin/admin.php:380
+#@ wpcf7
+msgid "Settings"
+msgstr "Innstillinger"
+
+#: includes/functions.php:198
+#@ wpcf7
+msgid "Slovak"
+msgstr "Slovakisk"
+
+#: includes/functions.php:199
+#@ wpcf7
+msgid "Slovene"
+msgstr "Slovensk"
+
+#: modules/captcha.php:227
+#@ wpcf7
+msgid "Small"
+msgstr "Liten"
+
+#: includes/functions.php:200
+#@ wpcf7
+msgid "Spanish"
+msgstr "Spansk"
+
+#: includes/functions.php:84
+#@ wpcf7
+msgid "Subject"
+msgstr "Emne"
+
+#: admin/includes/meta-boxes.php:54
+#@ wpcf7
+msgid "Subject:"
+msgstr "Emne:"
+
+#: includes/functions.php:97
+#, php-format
+#@ wpcf7
+msgid "Subject: %s"
+msgstr "Emne: %s"
+
+#: modules/submit.php:49
+#@ wpcf7
+msgid "Submit button"
+msgstr "Send knapp"
+
+#: admin/admin.php:396
+#@ wpcf7
+msgid "Support"
+msgstr "St&oslash;tte"
+
+#: includes/functions.php:201
+#@ wpcf7
+msgid "Swedish"
+msgstr "Svensk"
+
+#: modules/textarea.php:100
+#@ wpcf7
+msgid "Text area"
+msgstr "Tekstomr&aring;de"
+
+#: modules/text.php:190
+#@ wpcf7
+msgid "Text field"
+msgstr "Tekstfelt"
+
+#: includes/functions.php:203
+#@ wpcf7
+msgid "Thai"
+msgstr "Thai"
+
+#: modules/captcha.php:176
+#@ wpcf7
+msgid "The code that sender entered does not match the CAPTCHA"
+msgstr "Koden som avsender skrev inn stemmer ikke med CAPTCHA-bildet"
+
+#: modules/captcha.php:292
+#@ wpcf7
+msgid "This contact form contains CAPTCHA fields, but the necessary libraries (GD and FreeType) are not available on your server."
+msgstr "Dette kontaktskjemaet inneholder CAPTCHA-felt, men de n&oslash;dvendige bibliotekene (GD og FreeType) er ikke tilgjengelig p&aring; din server."
+
+#: modules/captcha.php:286
+#, php-format
+#@ wpcf7
+msgid "This contact form contains CAPTCHA fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Dette kontaktskjemaet inneholder CAPTCHA-felt, men den midlertidige mappen for filene (%s) finnes ikke eller er skrivebeskyttet. Du kan opprette mappen eller endre tillatelsene manuelt."
+
+#: modules/file.php:286
+#, php-format
+#@ wpcf7
+msgid "This contact form contains file uploading fields, but the temporary folder for the files (%s) does not exist or is not writable. You can create the folder or change its permission manually."
+msgstr "Dette kontaktskjemaet inneholder opplastingsfelt, men den midlertidige mappen for filene (%s) finnes ikke eller er skrivebeskyttet. Du kan opprette mappen eller endre tillatelser manuelt."
+
+#: modules/text.php:256
+#@ wpcf7
+msgid "This field requires author's URL"
+msgstr "Forfatterens nettside"
+
+#: modules/text.php:254
+#@ wpcf7
+msgid "This field requires author's email address"
+msgstr "Forfatterens epost-adresse"
+
+#: modules/text.php:252
+#@ wpcf7
+msgid "This field requires author's name"
+msgstr "Forfatterens navn"
+
+#: modules/file.php:209
+#@ wpcf7
+msgid "This file is too large."
+msgstr "Filen overskrider tillatt filst&oslash;rrelse."
+
+#: modules/file.php:204
+#@ wpcf7
+msgid "This file type is not allowed."
+msgstr "Filtypen er ikke tillatt"
+
+#: includes/functions.php:99
+#: includes/functions.php:113
+#, php-format
+#@ wpcf7
+msgid "This mail is sent via contact form on %1$s %2$s"
+msgstr "Denne e-posten er sendt via kontaktskjemaet p&aring; %1$s (%2$s)."
+
+#: modules/captcha.php:19
+#@ wpcf7
+msgid "To use CAPTCHA, you need <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> plugin installed."
+msgstr "For &aring; bruke CAPTCHA m&aring; du ha innstikket <a href=\"http://wordpress.org/extend/plugins/really-simple-captcha/\">Really Simple CAPTCHA</a> installert."
+
+#: admin/includes/meta-boxes.php:44
+#@ wpcf7
+msgid "To:"
+msgstr "Til:"
+
+#: includes/functions.php:205
+#@ wpcf7
+msgid "Turkish"
+msgstr "Tyrkisk"
+
+#: includes/functions.php:206
+#@ wpcf7
+msgid "Ukrainian"
+msgstr "Ukrainsk"
+
+#: includes/classes.php:810
+#@ wpcf7
+msgid "Untitled"
+msgstr "Uten tittel"
+
+#: modules/file.php:203
+#@ wpcf7
+msgid "Uploaded file is not allowed file type"
+msgstr "Opplastet filtype er ikke tillat"
+
+#: modules/file.php:208
+#@ wpcf7
+msgid "Uploaded file is too large"
+msgstr "Opplastet fil er for stor"
+
+#: modules/file.php:213
+#@ wpcf7
+msgid "Uploading a file fails for PHP error"
+msgstr "Opplasting av fil mislykkes p&aring; grunn av PHP-feil."
+
+#: modules/file.php:198
+#@ wpcf7
+msgid "Uploading a file fails for any reason"
+msgstr "Opplasting av fil mislyktes"
+
+#: admin/includes/meta-boxes.php:74
+#@ wpcf7
+msgid "Use HTML content type"
+msgstr "Bruk HTML"
+
+#: admin/admin.php:323
+#@ wpcf7
+msgid "Use mail (2)"
+msgstr "Bruk e-post (2)"
+
+#: admin/admin.php:291
+#, php-format
+#@ wpcf7
+msgid "Use the default language (%s)"
+msgstr "Bruk standardspr&aring;ket (%s)"
+
+#: includes/functions.php:40
+#@ wpcf7
+msgid "Validation errors occurred"
+msgstr "Feil oppstod"
+
+#: includes/functions.php:41
+#@ wpcf7
+msgid "Validation errors occurred. Please confirm the fields and submit it again."
+msgstr "Det oppstod en feil. Kontroller feltene og pr&oslash;v p&aring; nytt."
+
+#: includes/functions.php:207
+#@ wpcf7
+msgid "Vietnamese"
+msgstr "Vietnamesisk"
+
+#: modules/checkbox.php:204
+#@ wpcf7
+msgid "Wrap each item with <label> tag?"
+msgstr "Omslutt hvert objekt med <label> tagg?"
+
+#: admin/edit-contact-form.php:74
+#@ wpcf7
+msgid ""
+"You are about to delete this contact form.\n"
+"  'Cancel' to stop, 'OK' to delete."
+msgstr ""
+"Er du sikker p&aring; at du vil slette dette kontaktskjemaet? \n"
+"'Avbryt' for &aring; stoppe, 'OK' for &aring; fortsette."
+
+#: includes/functions.php:82
+#@ wpcf7
+msgid "Your Email"
+msgstr "E-post"
+
+#: includes/functions.php:86
+#@ wpcf7
+msgid "Your Message"
+msgstr "Melding"
+
+#: includes/functions.php:80
+#@ wpcf7
+msgid "Your Name"
+msgstr "Ditt navn"
+
+#: modules/quiz.php:141
+#@ wpcf7
+msgid "Your answer is not correct."
+msgstr "Svaret du skrev inn er feil."
+
+#: admin/admin.php:428
+#@ wpcf7
+msgid "Your contribution is needed for making this plugin better."
+msgstr "Ditt bidrag gj&oslash;r dette innstikket bedre."
+
+#: modules/captcha.php:177
+#@ wpcf7
+msgid "Your entered code is incorrect."
+msgstr "Koden du skrev inn er feil."
+
+#: includes/functions.php:31
+#@ wpcf7
+msgid "Your message was sent successfully. Thanks."
+msgstr "Din melding ble sendt. Takk."
+
+#: modules/file.php:251
+#@ wpcf7
+msgid "bytes"
+msgstr "bits"
+
+#. translators: plugin header field 'PluginURI'
+#: wp-contact-form-7.php:0
+#@ wpcf7
+msgid "http://contactform7.com/"
+msgstr "http://contactform7.com/"
+
+#: admin/admin.php:391
+#@ wpcf7
+msgid "http://contactform7.com/docs/"
+msgstr "http://contactform7.com/docs/"
+
+#: admin/admin.php:434
+#@ wpcf7
+msgid "http://contactform7.com/donate/"
+msgstr "http://contactform7.com/donate/"
+
+#: admin/admin.php:393
+#@ wpcf7
+msgid "http://contactform7.com/faq/"
+msgstr "http://contactform7.com/faq/"
+
+#: admin/admin.php:395
+#@ wpcf7
+msgid "http://contactform7.com/support/"
+msgstr "http://contactform7.com/support/"
+
+#: modules/acceptance.php:152
+#: modules/acceptance.php:155
+#: modules/captcha.php:211
+#: modules/captcha.php:214
+#: modules/captcha.php:219
+#: modules/captcha.php:222
+#: modules/captcha.php:226
+#: modules/captcha.php:237
+#: modules/captcha.php:240
+#: modules/captcha.php:245
+#: modules/captcha.php:248
+#: modules/checkbox.php:189
+#: modules/checkbox.php:192
+#: modules/date.php:164
+#: modules/date.php:167
+#: modules/date.php:172
+#: modules/date.php:175
+#: modules/date.php:180
+#: modules/date.php:185
+#: modules/file.php:243
+#: modules/file.php:246
+#: modules/file.php:251
+#: modules/file.php:254
+#: modules/number.php:174
+#: modules/number.php:177
+#: modules/number.php:182
+#: modules/number.php:185
+#: modules/number.php:190
+#: modules/number.php:195
+#: modules/quiz.php:168
+#: modules/quiz.php:171
+#: modules/quiz.php:176
+#: modules/quiz.php:179
+#: modules/select.php:152
+#: modules/select.php:155
+#: modules/submit.php:59
+#: modules/submit.php:62
+#: modules/submit.php:67
+#: modules/text.php:233
+#: modules/text.php:236
+#: modules/text.php:241
+#: modules/text.php:244
+#: modules/text.php:250
+#: modules/text.php:263
+#: modules/textarea.php:115
+#: modules/textarea.php:118
+#: modules/textarea.php:123
+#: modules/textarea.php:126
+#: modules/textarea.php:131
+#: modules/textarea.php:136
+#@ wpcf7
+msgid "optional"
+msgstr "frivillig"
+
+#: admin/admin.php:41
+#: admin/admin.php:113
+#@ wpcf7
+msgid "You are not allowed to edit this item."
+msgstr ""
+
+#: admin/admin.php:154
+#@ wpcf7
+msgid "You are not allowed to delete this item."
+msgstr ""
+
+#: admin/admin.php:157
+#@ wpcf7
+msgid "Error in deleting."
+msgstr ""
+
+#: admin/admin.php:196
+#: includes/classes.php:27
+#@ wpcf7
+msgid "Contact Forms"
+msgstr ""
+
+#: admin/admin.php:264
+#, php-format
+#@ wpcf7
+msgid "Search results for &#8220;%s&#8221;"
+msgstr ""
+
+#: admin/admin.php:273
+#@ wpcf7
+msgid "Search Contact Forms"
+msgstr ""
+
+#: admin/admin.php:454
+#, php-format
+#@ wpcf7
+msgid "<strong>Contact Form 7 %1$s requires WordPress %2$s or higher.</strong> Please <a href=\"%3$s\">update WordPress</a> first."
+msgstr ""
+
+#: admin/edit-contact-form.php:52
+#@ wpcf7
+msgid "Old code is also available."
+msgstr ""
+
+#: admin/includes/class-contact-forms-list-table.php:11
+#@ wpcf7
+msgid "Title"
+msgstr ""
+
+#: admin/includes/class-contact-forms-list-table.php:12
+#@ wpcf7
+msgid "Shortcode"
+msgstr ""
+
+#: admin/includes/class-contact-forms-list-table.php:13
+#@ wpcf7
+msgid "Author"
+msgstr ""
+
+#: admin/includes/class-contact-forms-list-table.php:14
+#: modules/date.php:142
+#@ wpcf7
+msgid "Date"
+msgstr ""
+
+#: admin/includes/class-contact-forms-list-table.php:117
+#, php-format
+#@ wpcf7
+msgid "Edit &#8220;%s&#8221;"
+msgstr ""
+
+#: admin/includes/class-contact-forms-list-table.php:154
+#@ wpcf7
+msgid "Y/m/d g:i:s A"
+msgstr ""
+
+#: admin/includes/class-contact-forms-list-table.php:161
+#, php-format
+#@ wpcf7
+msgid "%s ago"
+msgstr ""
+
+#: admin/includes/class-contact-forms-list-table.php:163
+#@ wpcf7
+msgid "Y/m/d"
+msgstr ""
+
+#: includes/classes.php:28
+#@ wpcf7
+msgid "Contact Form"
+msgstr ""
+
+#: includes/functions.php:21
+#, php-format
+#@ wpcf7
+msgid "%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s! Use %3$s instead."
+msgstr ""
+
+#: includes/functions.php:23
+#, php-format
+#@ wpcf7
+msgid "%1$s is <strong>deprecated</strong> since Contact Form 7 version %2$s with no alternative available."
+msgstr ""
+
+#: includes/functions.php:36
+#: includes/functions.php:46
+#@ wpcf7
+msgid "Failed to send your message. Please try later or contact the administrator by another method."
+msgstr ""
+
+#: includes/functions.php:45
+#@ wpcf7
+msgid "Submission was referred to as spam"
+msgstr ""
+
+#: includes/functions.php:50
+#@ wpcf7
+msgid "There are terms that the sender must accept"
+msgstr ""
+
+#: includes/functions.php:55
+#@ wpcf7
+msgid "There is a field that the sender must fill in"
+msgstr ""
+
+#: includes/functions.php:152
+#@ wpcf7
+msgid "Armenian"
+msgstr ""
+
+#: includes/functions.php:153
+#@ wpcf7
+msgid "Azerbaijani"
+msgstr ""
+
+#: includes/functions.php:155
+#@ wpcf7
+msgid "Basque"
+msgstr ""
+
+#: includes/functions.php:156
+#@ wpcf7
+msgid "Belarusian"
+msgstr ""
+
+#: includes/functions.php:168
+#@ wpcf7
+msgid "Esperanto"
+msgstr ""
+
+#: includes/functions.php:180
+#@ wpcf7
+msgid "Irish"
+msgstr ""
+
+#: includes/functions.php:186
+#@ wpcf7
+msgid "Macedonian"
+msgstr ""
+
+#: includes/functions.php:187
+#@ wpcf7
+msgid "Malay"
+msgstr ""
+
+#: includes/functions.php:189
+#@ wpcf7
+msgid "Maltese"
+msgstr ""
+
+#: includes/functions.php:197
+#@ wpcf7
+msgid "Sinhala"
+msgstr ""
+
+#: includes/functions.php:202
+#@ wpcf7
+msgid "Tamil"
+msgstr ""
+
+#: includes/functions.php:204
+#@ wpcf7
+msgid "Tagalog"
+msgstr ""
+
+#: modules/date.php:118
+#@ wpcf7
+msgid "Date format that the sender entered is invalid"
+msgstr ""
+
+#: modules/date.php:119
+#@ wpcf7
+msgid "Date format seems invalid."
+msgstr ""
+
+#: modules/date.php:123
+#@ wpcf7
+msgid "Date is earlier than minimum limit"
+msgstr ""
+
+#: modules/date.php:124
+#@ wpcf7
+msgid "This date is too early."
+msgstr ""
+
+#: modules/date.php:128
+#@ wpcf7
+msgid "Date is later than maximum limit"
+msgstr ""
+
+#: modules/date.php:129
+#@ wpcf7
+msgid "This date is too late."
+msgstr ""
+
+#: modules/date.php:188
+#: modules/number.php:198
+#: modules/text.php:266
+#: modules/textarea.php:139
+#@ wpcf7
+msgid "Use this text as placeholder?"
+msgstr ""
+
+#: modules/jetpack.php:21
+#, php-format
+#@ wpcf7
+msgid "<strong>Jetpack may cause problems for other plugins in certain cases.</strong> <a href=\"%s\" target=\"_blank\">See how to avoid it.</a>"
+msgstr ""
+
+#: modules/number.php:121
+#@ wpcf7
+msgid "Number format that the sender entered is invalid"
+msgstr ""
+
+#: modules/number.php:122
+#@ wpcf7
+msgid "Number format seems invalid."
+msgstr ""
+
+#: modules/number.php:126
+#@ wpcf7
+msgid "Number is smaller than minimum limit"
+msgstr ""
+
+#: modules/number.php:127
+#@ wpcf7
+msgid "This number is too small."
+msgstr ""
+
+#: modules/number.php:131
+#@ wpcf7
+msgid "Number is larger than maximum limit"
+msgstr ""
+
+#: modules/number.php:132
+#@ wpcf7
+msgid "This number is too large."
+msgstr ""
+
+#: modules/number.php:145
+#@ wpcf7
+msgid "Number (spinbox)"
+msgstr ""
+
+#: modules/number.php:148
+#@ wpcf7
+msgid "Number (slider)"
+msgstr ""
+
+#: modules/text.php:166
+#@ wpcf7
+msgid "Email address that the sender entered is invalid"
+msgstr ""
+
+#: modules/text.php:171
+#@ wpcf7
+msgid "URL that the sender entered is invalid"
+msgstr ""
+
+#: modules/text.php:172
+#@ wpcf7
+msgid "URL seems invalid."
+msgstr ""
+
+#: modules/text.php:176
+#@ wpcf7
+msgid "Telephone number that the sender entered is invalid"
+msgstr ""
+
+#: modules/text.php:177
+#@ wpcf7
+msgid "Telephone number seems invalid."
+msgstr ""
+
+#: modules/text.php:193
+#@ wpcf7
+msgid "Email"
+msgstr ""
+
+#: modules/text.php:196
+#@ wpcf7
+msgid "URL"
+msgstr ""
+
+#: modules/text.php:199
+#@ wpcf7
+msgid "Telephone number"
+msgstr ""
+
+#: settings.php:202
+#, php-format
+#@ wpcf7
+msgid "Contact form %d"
+msgstr ""
+
+#. translators: plugin header field 'Description'
+#: wp-contact-form-7.php:0
+#@ wpcf7
+msgid "Just another contact form plugin. Simple but flexible."
+msgstr ""
+
+#. translators: plugin header field 'Author'
+#: wp-contact-form-7.php:0
+#@ wpcf7
+msgid "Takayuki Miyoshi"
+msgstr ""
+
+#. translators: plugin header field 'AuthorURI'
+#: wp-contact-form-7.php:0
+#@ wpcf7
+msgid "http://ideasilo.wordpress.com/"
+msgstr ""
+
+#. translators: plugin header field 'Version'
+#: wp-contact-form-7.php:0
+#@ wpcf7
+msgid "3.4.1"
+msgstr ""
+

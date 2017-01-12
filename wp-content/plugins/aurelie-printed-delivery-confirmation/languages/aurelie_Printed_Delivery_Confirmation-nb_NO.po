@@ -1,0 +1,233 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Aurelie Printed Delivery Confirmation v1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-02-19 08:53:31+0000\n"
+"Last-Translator: admin <daniel.oraca@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: Norwegian (Bokmål)\n"
+"X-Poedit-Country: NORWAY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: aurelie_printed_delivery_confirmation.php:24
+#: aurelie_printed_delivery_confirmation.php:136
+#: aurelie_printed_delivery_confirmation.php:167
+#@ woocommerce
+msgid "Aurelie Printed Delivery Confirmation"
+msgstr ""
+
+#: aurelie_printed_delivery_confirmation.php:26
+#@ woocommerce
+msgid "Weight based shipping"
+msgstr ""
+
+#: aurelie_printed_delivery_confirmation.php:27
+#@ woocommerce
+msgid "Define shipping by weight and country"
+msgstr ""
+
+#: aurelie_printed_delivery_confirmation.php:72
+#: aurelie_printed_delivery_confirmation.php:186
+#@ aurelie_Printed_Delivery_Confirmation
+msgid "Title"
+msgstr "Leveringsbekreftelse"
+
+#: aurelie_printed_delivery_confirmation.php:74
+#@ default
+msgid "This is the title"
+msgstr ""
+
+#: aurelie_printed_delivery_confirmation.php:79
+#: aurelie_printed_delivery_confirmation.php:187
+#@ aurelie_Printed_Delivery_Confirmation
+msgid "Greetings"
+msgstr "Hei"
+
+#: aurelie_printed_delivery_confirmation.php:81
+#@ default
+msgid "This is the \"greetings text\""
+msgstr ""
+
+#: aurelie_printed_delivery_confirmation.php:86
+#: aurelie_printed_delivery_confirmation.php:188
+#@ aurelie_Printed_Delivery_Confirmation
+msgid "Thank you"
+msgstr "Vi takker for ditt kjøp hos Aurelie. Din ordreoversikt:"
+
+#: aurelie_printed_delivery_confirmation.php:88
+#@ default
+msgid "This is the \"thank you text\""
+msgstr ""
+
+#: aurelie_printed_delivery_confirmation.php:93
+#@ aurelie_Printed_Delivery_Confirmation
+msgid "Order Details"
+msgstr ""
+
+#: aurelie_printed_delivery_confirmation.php:95
+#@ default
+msgid "This is the \"order details text\""
+msgstr ""
+
+#: aurelie_printed_delivery_confirmation.php:100
+#: aurelie_printed_delivery_confirmation.php:205
+#@ aurelie_Printed_Delivery_Confirmation
+msgid "Bellow1"
+msgstr "Har du spørsmål vedrørende din bestilling, kan du rette dem til Kundeservice på kundeservice@aurelie.no. Kun ubrukte og uskadede varer kan returneres."
+
+#: aurelie_printed_delivery_confirmation.php:107
+#: aurelie_printed_delivery_confirmation.php:206
+#@ aurelie_Printed_Delivery_Confirmation
+msgid "Bellow2"
+msgstr "For å returnere sender du varen i sin opprinnelige innpakning til postadressen oppgitt i angrefristskjemaet (side 1). Du setter på frimerke som vi refunderer i tillegg til kjøpssummen."
+
+#: aurelie_printed_delivery_confirmation.php:102
+#@ default
+msgid "This is the \"Your orders on... text\""
+msgstr ""
+
+#: aurelie_printed_delivery_confirmation.php:109
+#@ default
+msgid "This is the \"How to return items text\""
+msgstr ""
+
+#: aurelie_printed_delivery_confirmation.php:114
+#: aurelie_printed_delivery_confirmation.php:189
+#@ aurelie_Printed_Delivery_Confirmation
+msgid "Footer"
+msgstr "Aurelie.no ved Hagen Media | Org.nr: 982798167 | Postboks 4141 Gulskogen, 3005 Drammen | 960 44 296"
+
+#: aurelie_printed_delivery_confirmation.php:116
+#@ default
+msgid "This is the \"footer text\""
+msgstr ""
+
+#: aurelie_printed_delivery_confirmation.php:191
+#@ aurelie_Printed_Delivery_Confirmation
+msgid "Shipping Address"
+msgstr "Leveringsadresse"
+
+#: aurelie_printed_delivery_confirmation.php:192
+#@ aurelie_Printed_Delivery_Confirmation
+msgid "Account Number"
+msgstr "Kontonummer"
+
+#: aurelie_printed_delivery_confirmation.php:193
+#@ aurelie_Printed_Delivery_Confirmation
+msgid "Order Number"
+msgstr "Ordrenummer"
+
+#: aurelie_printed_delivery_confirmation.php:194
+#@ aurelie_Printed_Delivery_Confirmation
+msgid "Invoice Number"
+msgstr "Fakturanummer"
+
+#: aurelie_printed_delivery_confirmation.php:195
+#@ aurelie_Printed_Delivery_Confirmation
+msgid "Invoice Date"
+msgstr "Fakturadato"
+
+#: aurelie_printed_delivery_confirmation.php:196
+#@ aurelie_Printed_Delivery_Confirmation
+msgid "Side"
+msgstr "Side"
+
+#: aurelie_printed_delivery_confirmation.php:204
+#, php-format
+#@ aurelie_Printed_Delivery_Confirmation
+msgid "Your orders on %s was also carried out by way of payment: %s. The total amount of %s is charged to your card. Thank you for your purchase!"
+msgstr "Din ordre den %s ble gjennomført med betalingsmåten: <b>%s</b>. Det samlede beløpet er <b>kr %s</b>. Takk for handelen!"
+
+#: aurelie_printed_delivery_confirmation.php:234
+#@ woocommerce
+msgid "Product"
+msgstr ""
+
+#: aurelie_printed_delivery_confirmation.php:235
+#@ woocommerce
+msgid "Total"
+msgstr ""
+
+#: include/tcpdf/tcpdf.php:7083
+#: include/tcpdf/tcpdf.php:14840
+#: include/tcpdf/tcpdf.php:22655
+#@ aurelie_Printed_Delivery_Confirmation
+msgctxt ""
+msgid "L"
+msgstr ""
+
+#: include/tcpdf/tcpdf.php:15295
+#: include/tcpdf/tcpdf.php:15564
+#@ aurelie_Printed_Delivery_Confirmation
+msgctxt ""
+msgid "positionL"
+msgstr ""
+
+#: include/tcpdf/tcpdf.php:15307
+#@ aurelie_Printed_Delivery_Confirmation
+msgctxt ""
+msgid "align"
+msgstr ""
+
+#: include/tcpdf/tcpdf.php:15575
+#@ aurelie_Printed_Delivery_Confirmation
+msgctxt ""
+msgid "hpadding"
+msgstr ""
+
+#: aurelie_printed_delivery_confirmation.php:210
+#@ aurelie_Printed_Delivery_Confirmation
+msgid "Cart Subtotal"
+msgstr ""
+
+#: aurelie_printed_delivery_confirmation.php:211
+#@ aurelie_Printed_Delivery_Confirmation
+msgid "Shipping"
+msgstr ""
+
+#: aurelie_printed_delivery_confirmation.php:119
+#: aurelie_printed_delivery_confirmation.php:337
+#@ aurelie_Printed_Delivery_Confirmation
+msgid "PDF2 Seller Name"
+msgstr "Aurelie"
+
+#: aurelie_printed_delivery_confirmation.php:120
+#: aurelie_printed_delivery_confirmation.php:340
+#@ aurelie_Printed_Delivery_Confirmation
+msgid "PDF2 Seller Address"
+msgstr "Postboks 4141 Gulskogen"
+
+#: aurelie_printed_delivery_confirmation.php:121
+#: aurelie_printed_delivery_confirmation.php:343
+#@ aurelie_Printed_Delivery_Confirmation
+msgid "PDF2 Seller Phone"
+msgstr "92282815"
+
+#: aurelie_printed_delivery_confirmation.php:122
+#: aurelie_printed_delivery_confirmation.php:346
+#@ aurelie_Printed_Delivery_Confirmation
+msgid "PDF2 Seller Fax"
+msgstr ""
+
+#: aurelie_printed_delivery_confirmation.php:123
+#: aurelie_printed_delivery_confirmation.php:349
+#@ aurelie_Printed_Delivery_Confirmation
+msgid "PDF2 Seller Email"
+msgstr "kundeservice@aurelie.no"
+
+#: aurelie_printed_delivery_confirmation.php:315
+#@ aurelie_Printed_Delivery_Confirmation
+msgid "Incl. tax"
+msgstr "Inkl. Mva:"
+

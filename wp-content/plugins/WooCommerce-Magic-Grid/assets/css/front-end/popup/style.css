@@ -1,0 +1,78 @@
+.popup_quickview { 
+	background-color: #ffffff;
+	box-shadow: 0 0 37px -5px #000;
+	padding:0 10px 0 0;
+	color: #111;
+	display: none;
+	min-width: 900px;
+	max-width:900px;
+	height: 600px;
+	max-height: 900px;
+}
+.popup_sendto { 
+	background-color: #ffffff;
+	box-shadow: 0 0 37px -5px #000;
+	padding:0;
+	color: #111;
+	display: none;
+	min-width:400px;
+	max-width:600px;
+	min-height: 400px;
+	max-height: 600px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+}
+.pw_woo_ad_search_popup_close{
+	color: #333;
+	cursor: pointer;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+	position: absolute;
+	right: 5px;
+	top: 4px;
+	z-index:99;
+}
+.popup_sendto .pw_woo_ad_search_popup_close{ color:#f5f5f5;}
+.pw_woo_ad_search_popup_button{
+	
+}
+
+/*QUICK VIEW STYLE*/
+.woo-quick-image-cnt .woo-bx-wrapper { display:block; margin:0 auto 0 0!important; }
+.woo-pager{ position:absolute; bottom:0px; left:0px; padding:10px;}
+	.woo-pager a{ display:inline-block; margin-right:5px; max-width:75px;  }
+		.woo-pager a img{ opacity:0.7; max-width:75px }
+			.woo-pager a img:hover{ opacity:1 }
+		.woo-pager a.active img{ opacity:1 }
+
+.woo-quick-detail-cnt { padding:10px; height:100%; }
+.woo-quick-title a{ text-decoration:none; }
+	.woo-quick-title a:hover{ text-decoration:none; }
+.woo-quick-rating .wg-star-rating{ display:block}
+.woo-quick-rating a.wg-woocommerce-review-link{  float:none;}
+.woo-quick-price del{ margin-right:10px; display:block; margin-bottom:10px; }
+.woo-quick-price ins{ text-decoration:none; }
+.woo-quick-excerpt{ margin:10px 0; }
+.woo-quick-cat , .woo-quick-tag{ margin:5px 0; text-transform:uppercase; }
+.woo-quick-add .woo-addcard-btn a{display: block;padding: 5px 20px;text-align: center;text-transform: uppercase;color: #fff;background: #999;margin: 10px 0px;text-decoration: none;}
+
+
+/*SENDTO STYLE*/
+.popup_sendto .woo-sendto-title { margin-bottom: 30px;background: #333;padding: 15px 0;text-align: center;text-transform: uppercase; color:#f5f5f5; font-family:inherit; -moz-border-radius:5px 5px 0 0;-webkit-border-radius:5px 5px 0 0;border-radius:5px 5px 0 0; position:relative;}
+	.popup_sendto .woo-sendto-title:after{ content:''; position:absolute; bottom:-12px; left:50%; margin-left:-7px; width: 0;height: 0;border-style: solid;border-width: 12px 12px 0 12px;border-color: #333 transparent transparent transparent;}
+	.popup_sendto .woo-sendto-title h3{ margin:0; font-size:17px;color: #f0f0f0!important; }
+
+.popup_sendto .input-group{ width:70%; margin:0 auto; margin-bottom:10px; }
+
+	.popup_sendto .title-input{border-color: #ccc!important;border-width: 1px;border-bottom-width: 3px;width: 100%!important; height:34px; margin:0!important; text-transform:uppercase; text-align:center;-moz-border-radius:5px!important;-webkit-border-radius:5px!important;border-radius:5px!important;  }
+	.popup_sendto .title-input:hover{ border-color:#adadad!important }
+		.popup_sendto .title-input:focus{ box-shadow:none!important;-webkit-box-shadow:none!important; }
+		
+	.popup_sendto .textarea-input{border-color: #ccc!important;border-width: 1px;border-bottom-width: 3px;width: 100%!important; height:auto!important; margin:0!important;text-transform:uppercase;text-align:center;-moz-border-radius:5px!important;-webkit-border-radius:5px!important;border-radius:5px!important; }
+	.popup_sendto .textarea-input:hover{ border-color:#adadad!important; resize:none;}
+		.popup_sendto .textarea-input:focus{ box-shadow:none!important;-webkit-box-shadow:none!important; }
+
+.popup_sendto .search-submit{display: block;padding: 5px 20px;text-align: center;text-transform: uppercase;color: #fff!important;background: #999;margin: 10px 0px;text-decoration: none; border:none; width:100%;-moz-border-radius:5px!important;-webkit-border-radius:5px!important;border-radius:5px!important;   }
+	.popup_sendto .search-submit:hover{  background:#666;-webkit-transition: all  0.3s ease 0s;-moz-transition: all  0.3s ease 0s;-ms-transition: all  0.3s ease 0s;-o-transition: all  0.3s ease 0s;transition: all  0.3s ease 0s;}

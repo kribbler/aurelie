@@ -1,0 +1,79 @@
+/*
+* 	Owl Carousel Owl Demo Theme 
+*	v1.3.3
+*/
+
+.woo-owl-theme .woo-owl-controls{
+	margin-top: 10px;
+	text-align: center;
+}
+
+/* Styling Next and Prev buttons */
+.woo-top-left-ctrl .woo-owl-buttons {position: absolute;top: -35px; left:0px}
+.woo-top-right-ctrl .woo-owl-buttons {position: absolute;top: -35px; right:0px}
+.woo-top-center-ctrl .woo-owl-buttons {position: absolute;top: -35px; left:50%; margin-left:-34px;}
+.woo-top-middle-ctrl .woo-owl-buttons{ position: absolute;top: 50%; left:0px; width:100%; margin-top:-15px; }
+	.woo-top-middle-ctrl .woo-owl-controls .woo-owl-buttons div.woo-owl-next{ position:absolute; right:-10px; }
+	.woo-top-middle-ctrl .woo-owl-controls .woo-owl-buttons div.woo-owl-prev{ position:absolute; left:-10px; }
+
+.woo-owl-theme .woo-owl-controls .woo-owl-buttons div{
+	color: #FFF;
+	display: inline-block;
+	zoom: 1;
+	*display: inline;/*IE7 life-saver */
+	font-size: 0px;
+	background: #869791;
+	/*filter: Alpha(Opacity=50);IE7 fix*/
+	width:30px; height:30px;
+	position:relative;
+	margin:2px;
+}
+	.woo-owl-theme .woo-owl-controls .woo-owl-buttons div.woo-owl-next:before{ content:'\f105'; font-family:FontAwesome; font-size:15px; line-height:30px }
+	.woo-owl-theme .woo-owl-controls .woo-owl-buttons div.woo-owl-prev:before{ content:'\f104'; font-family:FontAwesome; font-size:15px; line-height:30px; }
+/* Clickable class fix problem with hover on touch devices */
+/* Use it for non-touch hover action */
+.woo-owl-theme .woo-owl-controls.clickable .woo-owl-buttons div:hover{
+	text-decoration: none;
+}
+
+/* Styling Pagination*/
+.woo-owl-theme .woo-owl-controls .woo-owl-page{
+	display: inline-block;
+	zoom: 1;
+	*display: inline;/*IE7 life-saver */
+}
+.woo-owl-theme .woo-owl-controls .woo-owl-page span{
+	display: block;
+	width: 12px;
+	height: 12px;
+	margin: 5px 7px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	background: #869791;
+}
+
+.woo-owl-theme .woo-owl-controls .woo-owl-page.active span,
+.woo-owl-theme .woo-owl-controls.clickable .woo-owl-page:hover span{
+	filter: Alpha(Opacity=100);/*IE7 fix*/
+	opacity: 1;
+}
+
+/* If PaginationNumbers is true */
+
+.woo-owl-theme .woo-owl-controls .woo-owl-page span.woo-owl-numbers{
+	height: auto;
+	width: auto;
+	color: #FFF;
+	padding: 2px 10px;
+	font-size: 12px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
+
+/* preloading images */
+.woo-owl-item.loading{
+	min-height: 150px;
+	background: url(AjaxLoader.gif) no-repeat center center
+}

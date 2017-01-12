@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<consignments>
+ <consignment transport_agreement="1229" estimate="true">
+  <transfer_date>2013-09-23T22:13:36</transfer_date>
+  <values>
+   <value name="ordre_id" value="1907" />
+  </values>
+  <product>bring_minipakke</product>
+  <parts>
+   <consignee>
+    <name>Dan Oraca</name>
+    <address1>Liebakken 10</address1>
+    <address2 />
+    <country>NO</country>
+    <postcode>6300</postcode>
+    <city>Drammen</city>
+    <phone />
+    <email>daniel.oraca@gmail.com</email>
+    <mobile />
+   </consignee>
+  </parts>
+  <items>
+   <item amount="1" weight="1.3" length="5" width="5" height="5" description="Armbånd i sølv med ferskvannsperler" type="PK" />
+  </items>
+  <services>
+   <service id="bring_e_varsle_for_utlevering" />
+  </services>
+  <references>
+   <consignor>1907</consignor>
+  </references>
+  <messages>
+   <carrier>test_message_carrier</carrier>
+   <consignee>test_message_consignee</consignee>
+  </messages>
+ </consignment>
+</consignments>
+
+
+The response:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<consignments>
+  <consignment>
+    <booking-request type="boolean">false</booking-request>
+    <carrier-message>test_message_carrier</carrier-message>
+    <collection-id type="integer" nil="true"/>
+    <consignee-message>test_message_consignee</consignee-message>
+    <consignee-reference nil="true"/>
+    <consignment-transfer-group-id type="integer" nil="true"/>
+    <consignor-reference>1907</consignor-reference>
+    <created-at type="datetime">2013-09-23T20:11:25Z</created-at>
+    <freight-payer-key>consignor</freight-payer-key>
+    <id type="integer">747464</id>
+    <number>4017071219011153287</number>
+    <product-id type="integer">11</product-id>
+    <state>open</state>
+    <tod-city nil="true"/>
+    <tod-code nil="true"/>
+    <tod-country nil="true"/>
+    <tod-postcode nil="true"/>
+    <transfer-at type="datetime">2013-09-23T22:13:36Z</transfer-at>
+    <transport-agreement-id type="integer">1229</transport-agreement-id>
+    <updated-at type="datetime">2013-09-23T20:11:25Z</updated-at>
+    <number-with-checksum>40170712190111532871</number-with-checksum>
+    <bundles type="array">
+      <bundle>
+        <bundle-type-id type="integer">26</bundle-type-id>
+        <consignment-id type="integer">747464</consignment-id>
+        <created-at type="datetime">2013-09-23T20:11:25Z</created-at>
+        <description>Armbånd i sølv med ferskvannsperler</description>
+        <height type="float">5.0</height>
+        <id type="integer">773421</id>
+        <insurance-amount type="integer" nil="true"/>
+        <length type="float">5.0</length>
+        <load-meter type="float">0</load-meter>
+        <longname nil="true"/>
+        <pallet-places type="integer" nil="true"/>
+        <shortname nil="true"/>
+        <updated-at type="datetime">2013-09-23T20:11:25Z</updated-at>
+        <volume type="float">0</volume>
+        <weight type="float">1.3</weight>
+        <width type="float">5.0</width>
+        <pieces type="array">
+          <piece>
+            <additional type="boolean" nil="true"/>
+            <bundle-id type="integer">773421</bundle-id>
+            <created-at type="datetime">2013-09-23T20:11:25Z</created-at>
+            <id type="integer">956344</id>
+            <number>0037071219016039819</number>
+            <printed type="boolean" nil="true"/>
+            <return-colli-number nil="true"/>
+            <return-consignment-number nil="true"/>
+            <updated-at type="datetime">2013-09-23T20:11:25Z</updated-at>
+            <number-with-checksum>00370712190160398191</number-with-checksum>
+          </piece>
+        </pieces>
+      </bundle>
+    </bundles>
+    <addresses type="array">
+      <address type="ConsigneeAddress">
+        <address1>Liebakken 10</address1>
+        <address2 nil="true"/>
+        <agent-number nil="true"/>
+        <city>Drammen</city>
+        <consignment-id type="integer">747464</consignment-id>
+        <contact-person nil="true"/>
+        <country>NO</country>
+        <created-at type="datetime">2013-09-23T20:11:25Z</created-at>
+        <customer-number nil="true"/>
+        <email>daniel.oraca@gmail.com</email>
+        <fax nil="true"/>
+        <freight-payer type="boolean" nil="true"/>
+        <id type="integer">1079859</id>
+        <mobile nil="true"/>
+        <name>Dan Oraca</name>
+        <number nil="true"/>
+        <phone nil="true"/>
+        <postbox nil="true"/>
+        <postbox-city nil="true"/>
+        <postbox-postcode nil="true"/>
+        <postcode>6300</postcode>
+        <updated-at type="datetime">2013-09-23T20:11:25Z</updated-at>
+      </address>
+    </addresses>
+    <services type="array">
+      <service type="ConsignmentService">
+        <consignment-id type="integer">747464</consignment-id>
+        <created-at type="datetime">2013-09-23T20:11:25Z</created-at>
+        <id type="integer">148332</id>
+        <product-service-id type="integer">11</product-service-id>
+        <updated-at type="datetime">2013-09-23T20:11:25Z</updated-at>
+        <consignment-attributes type="array"/>
+      </service>
+    </services>
+    <values>
+      <value name="ordre_id" value="1907"/>
+    </values>
+    <consignment-pdf>http://cargonizer.no/consignments/label_pdf?consignment_ids%5B%5D=747464</consignment-pdf>
+    <waybill-pdf>http://cargonizer.no/consignments/waybill_pdf?consignment_ids%5B%5D=747464</waybill-pdf>
+    <tracking-url>http://sporing.bring.no/sporing.html?q=40170712190111532871&amp;layout=standalone</tracking-url>
+    <cost-estimate>
+      <net>80.0</net>
+      <gross>80.0</gross>
+    </cost-estimate>
+    <print-result>No printer found</print-result>
+  </consignment>
+</consignments>

@@ -1,0 +1,172 @@
+Fri frakt
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<consignments>
+ <consignment transport_agreement="1229" estimate="true">
+  <transfer_date>2015-01-28T16:41:09</transfer_date>
+  <values>
+   <value name="ordre_id" value="8061" />
+  </values>
+  <product>bring_servicepakke</product>
+  <parts>
+   <consignee>
+    <name>Kjetil Hagen</name>
+    <address1>Liebakken 26</address1>
+    <address2>Norge</address2>
+    <country>NO</country>
+    <postcode>3048</postcode>
+    <city>Drammen</city>
+    <phone>92282815</phone>
+    <email />
+    <mobile />
+   </consignee>
+  </parts>
+  <items>
+   <item amount="1" weight="0.4" length="" width="" height="" volume="0" description="Sølvarmbånd med sopp" type="PK" />
+   <item amount="1" weight="0.4" length="" width="" height="" volume="0" description="Sølvarmbånd med sopp" type="PK" />
+  </items>
+  <services>
+  </services>
+  <references>
+   <consignor>8061</consignor>
+  </references>
+ </consignment>
+</consignments>
+
+
+The response:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<consignments>
+  <consignment>
+    <booking-request type="boolean">false</booking-request>
+    <carrier-message nil="true"/>
+    <collection-id type="integer" nil="true"/>
+    <consignee-message nil="true"/>
+    <consignee-reference nil="true"/>
+    <consignment-transfer-group-id type="integer" nil="true"/>
+    <consignor-reference>8061</consignor-reference>
+    <created-at type="datetime">2015-01-28T14:44:30Z</created-at>
+    <email-label-to-consignee type="boolean" nil="true"/>
+    <freight-payer-key>consignor</freight-payer-key>
+    <id type="integer">2195164</id>
+    <number>4017071219011153334</number>
+    <product-id type="integer">7</product-id>
+    <state>open</state>
+    <tags nil="true"/>
+    <tod-city nil="true"/>
+    <tod-code nil="true"/>
+    <tod-country nil="true"/>
+    <tod-postcode nil="true"/>
+    <transfer-at type="datetime">2015-01-28T16:41:09Z</transfer-at>
+    <transport-agreement-id type="integer">1229</transport-agreement-id>
+    <updated-at type="datetime">2015-01-28T14:44:30Z</updated-at>
+    <number-with-checksum>40170712190111533342</number-with-checksum>
+    <bundles type="array">
+      <bundle>
+        <bundle-type-id type="integer">26</bundle-type-id>
+        <consignment-id type="integer">2195164</consignment-id>
+        <created-at type="datetime">2015-01-28T14:44:30Z</created-at>
+        <description>Sølvarmbånd med sopp</description>
+        <height type="float">0</height>
+        <id type="integer">2259321</id>
+        <insurance-amount type="integer" nil="true"/>
+        <length type="float">0</length>
+        <load-meter type="float">0</load-meter>
+        <longname nil="true"/>
+        <pallet-places type="integer">0</pallet-places>
+        <shortname nil="true"/>
+        <updated-at type="datetime">2015-01-28T14:44:30Z</updated-at>
+        <volume type="float">0.0</volume>
+        <weight type="float">0.4</weight>
+        <width type="float">0</width>
+        <pieces type="array">
+          <piece>
+            <additional type="boolean" nil="true"/>
+            <bundle-id type="integer">2259321</bundle-id>
+            <created-at type="datetime">2015-01-28T14:44:30Z</created-at>
+            <id type="integer">3081886</id>
+            <number>0037071219016039870</number>
+            <printed type="boolean" nil="true"/>
+            <return-colli-number nil="true"/>
+            <return-consignment-number nil="true"/>
+            <updated-at type="datetime">2015-01-28T14:44:30Z</updated-at>
+            <number-with-checksum>00370712190160398702</number-with-checksum>
+          </piece>
+        </pieces>
+        <dangerous-goods-declarations type="array"/>
+      </bundle>
+      <bundle>
+        <bundle-type-id type="integer">26</bundle-type-id>
+        <consignment-id type="integer">2195164</consignment-id>
+        <created-at type="datetime">2015-01-28T14:44:30Z</created-at>
+        <description>Sølvarmbånd med sopp</description>
+        <height type="float">0</height>
+        <id type="integer">2259322</id>
+        <insurance-amount type="integer" nil="true"/>
+        <length type="float">0</length>
+        <load-meter type="float">0</load-meter>
+        <longname nil="true"/>
+        <pallet-places type="integer">0</pallet-places>
+        <shortname nil="true"/>
+        <updated-at type="datetime">2015-01-28T14:44:30Z</updated-at>
+        <volume type="float">0.0</volume>
+        <weight type="float">0.4</weight>
+        <width type="float">0</width>
+        <pieces type="array">
+          <piece>
+            <additional type="boolean" nil="true"/>
+            <bundle-id type="integer">2259322</bundle-id>
+            <created-at type="datetime">2015-01-28T14:44:30Z</created-at>
+            <id type="integer">3081887</id>
+            <number>0037071219016039871</number>
+            <printed type="boolean" nil="true"/>
+            <return-colli-number nil="true"/>
+            <return-consignment-number nil="true"/>
+            <updated-at type="datetime">2015-01-28T14:44:30Z</updated-at>
+            <number-with-checksum>00370712190160398719</number-with-checksum>
+          </piece>
+        </pieces>
+        <dangerous-goods-declarations type="array"/>
+      </bundle>
+    </bundles>
+    <addresses type="array">
+      <address type="ConsigneeAddress">
+        <address1>Liebakken 26</address1>
+        <address2>Norge</address2>
+        <agent-number nil="true"/>
+        <city>Drammen</city>
+        <consignment-id type="integer">2195164</consignment-id>
+        <contact-person nil="true"/>
+        <country>NO</country>
+        <created-at type="datetime">2015-01-28T14:44:30Z</created-at>
+        <customer-number nil="true"/>
+        <email nil="true"/>
+        <fax nil="true"/>
+        <freight-payer type="boolean" nil="true"/>
+        <id type="integer">3336406</id>
+        <mobile nil="true"/>
+        <name>Kjetil Hagen</name>
+        <number nil="true"/>
+        <phone>92282815</phone>
+        <postbox nil="true"/>
+        <postbox-city nil="true"/>
+        <postbox-postcode nil="true"/>
+        <postcode>3048</postcode>
+        <updated-at type="datetime">2015-01-28T14:44:30Z</updated-at>
+      </address>
+    </addresses>
+    <services type="array"/>
+    <values>
+      <value name="ordre_id" value="8061"/>
+    </values>
+    <consignment-pdf>http://cargonizer.no/consignments/label_pdf?consignment_ids%5B%5D=2195164</consignment-pdf>
+    <waybill-pdf>http://cargonizer.no/consignments/waybill_pdf?consignment_ids%5B%5D=2195164</waybill-pdf>
+    <tracking-url>http://sporing.bring.no/sporing.html?q=40170712190111533342&amp;layout=standalone</tracking-url>
+    <cost-estimate>
+      <net>151.0</net>
+      <gross>151.0</gross>
+    </cost-estimate>
+    <print-result>Printing was disabled in [prefs]</print-result>
+  </consignment>
+</consignments>

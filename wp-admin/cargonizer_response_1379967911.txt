@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<consignments>
+ <consignment transport_agreement="1229" estimate="true">
+  <transfer_date>2013-09-23T22:25:11</transfer_date>
+  <values>
+   <value name="ordre_id" value="123456" />
+  </values>
+  <product>bring_pa_doren</product>
+  <parts>
+   <consignee>
+    <name>Dan Oraca</name>
+    <address1>Liebakken 10</address1>
+    <address2 />
+    <country>NO</country>
+    <postcode>3048</postcode>
+    <city>Drammen</city>
+    <phone>66006600</phone>
+   </consignee>
+  </parts>
+  <items>
+   <item amount="1" weight="1.3" length="7" width="7" height="7" description="Armbånd i sølv med ferskvannsperler" type="PK" />
+  </items>
+  <services>
+   <service id="bring_e_varsle_for_utlevering" />
+  </services>
+ </consignment>
+</consignments>
+
+
+The response:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<consignment-cost>
+  <estimated-cost type="float">100.0</estimated-cost>
+  <gross-amount type="float">100.0</gross-amount>
+  <net-amount type="float">100.0</net-amount>
+</consignment-cost>
